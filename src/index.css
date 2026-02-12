@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.unfix-ios-bg {
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: initial !important;
+  }
+}
+
+:root {
+  --primaryDark: theme(colors.primaryDark);
+}
+
