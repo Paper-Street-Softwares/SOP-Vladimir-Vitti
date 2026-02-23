@@ -1,13 +1,13 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState } from "react";
 
-const ColorModeContext = createContext(null)
+const ColorModeContext = createContext(null);
 
 export function ColorModeProvider({ children }) {
-  const [colorMode, setColorMode] = useState('defaultLight') // defaultDark, defaultLight, light, dark
+  const [colorMode, setColorMode] = useState("defaultLight"); // defaultDark, defaultLight, light, dark
 
-  const [whatsAppColor] = useState(false) // ativa cor do WhatsApp
-  const [showGlobalButton] = useState(false) // ativa as os botões e caixa de alerta
-  const [enableClickEvent, setEnableClickEvent] = useState(true) // Dispara evento de clique
+  const [whatsAppColor] = useState(false); // ativa cor do WhatsApp
+  const [showGlobalButton] = useState(false); // ativa as os botões e caixa de alerta
+  const [enableClickEvent, setEnableClickEvent] = useState(true); // Dispara evento de clique
 
   return (
     <ColorModeContext.Provider
@@ -22,44 +22,43 @@ export function ColorModeProvider({ children }) {
     >
       {children}
     </ColorModeContext.Provider>
-  )
+  );
 }
 
 export function ButtonsLps() {
-  const [showGlobalButtonsLps, setShowGlobalButtonsLps] = useState(false) // ativa as os botões da lps
+  const [showGlobalButtonsLps, setShowGlobalButtonsLps] = useState(false); // ativa as os botões da lps
 
   return {
     showGlobalButtonsLps,
     setShowGlobalButtonsLps,
-  }
+  };
 }
 
 export const whatsAppThemes = {
-  light: 'bg-wppDark text-corTitulosBranca border-green-600/30',
-  dark: 'bg-wppLight text-corTitulosBranca border-green-600/30',
-  defaultDark: 'bg-wppDark text-corTitulosBranca border-green-600/30',
-  defaultLight: 'bg-wppDark text-corTitulosBranca border-green-600/30',
-}
+  light: "bg-wppDark text-corTitulosBranca border-green-600/30",
+  dark: "bg-wppLight text-corTitulosBranca border-green-600/30",
+  defaultDark: "bg-wppDark text-corTitulosBranca border-green-600/30",
+  defaultLight: "bg-wppDark text-corTitulosBranca border-green-600/30",
+};
 
 export const defaultButtonThemes = {
-  light: 'bg-primaryDark text-corTitulosBranca border border-primaryDark/20 ',
-  dark: 'bg-primaryLight text-corTitulosPreto',
-  defaultDark: 'bg-primaryLight text-corTitulosPreto',
-  defaultLight:
-    'bg-primaryDark text-corTitulosBranca border border-primaryDark/20 ',
-}
+  light: "bg-primaryDark text-corTitulosBranca border border-primaryDark/20 ",
+  dark: "bg-primaryLight text-corTitulosPreto",
+  defaultDark: "bg-primaryLight text-corTitulosPreto",
+  defaultLight: "bg-primaryDark text-corTitulosBranca  ",
+};
 
 export const alertTheme = {
-  light: 'bg-red-800 text-corTitulosBranca border border-primaryDark/20',
-  dark: 'bg-red-800 text-corTitulosBranca border border-primaryDark/20 shadow-white',
-  defaultDark: 'bg-red-800 text-corTitulosBranca border border-primaryDark/20',
-  defaultLight: 'bg-red-800 text-corTitulosBranca border border-primaryDark/20',
-}
+  light: "bg-red-800 text-corTitulosBranca border border-primaryDark/20",
+  dark: "bg-red-800 text-corTitulosBranca border border-primaryDark/20 shadow-white",
+  defaultDark: "bg-red-800 text-corTitulosBranca border border-primaryDark/20",
+  defaultLight: "bg-red-800 text-corTitulosBranca border border-primaryDark/20",
+};
 
 export function useColorMode() {
-  const context = useContext(ColorModeContext)
+  const context = useContext(ColorModeContext);
   if (!context) {
-    throw new Error('useColorMode must be used within ColorModeProvider')
+    throw new Error("useColorMode must be used within ColorModeProvider");
   }
-  return context
+  return context;
 }

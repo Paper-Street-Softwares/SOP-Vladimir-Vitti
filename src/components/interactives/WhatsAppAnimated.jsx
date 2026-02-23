@@ -1,101 +1,101 @@
-import React, { useState } from 'react'
-import content from '../../content/content'
-import { getWhatsappLink } from '../util/WhatsappLink'
-import ButtonReflexo from './ButtonReflexo'
-import { useColorMode } from '../../context/UseContextArchive'
+import React, { useState } from "react";
+import content from "../../content/content";
+import { getWhatsappLink } from "../util/WhatsappLink";
+import ButtonReflexo from "./ButtonReflexo";
+import { useColorMode } from "../../context/UseContextArchive";
 import {
   whatsAppThemes,
   defaultButtonThemes,
-} from '../../context/UseContextArchive'
+} from "../../context/UseContextArchive";
 
 export default function WhatsappAnimated() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [nome, setNome] = useState('')
-  const [telefone, setTelefone] = useState('')
-  const [nomeErro, setNomeErro] = useState('')
-  const [telefoneErro, setTelefoneErro] = useState('')
-  const [formErro, setFormErro] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [nome, setNome] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [nomeErro, setNomeErro] = useState("");
+  const [telefoneErro, setTelefoneErro] = useState("");
+  const [formErro, setFormErro] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleOpenModal = (e) => {
-    e.preventDefault()
-    setIsModalOpen(true)
-  }
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
 
   const handleNomeChange = (e) => {
-    const valor = e.target.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s]/g, '')
-    setNome(valor)
+    const valor = e.target.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ\s]/g, "");
+    setNome(valor);
 
-    if (valor.trim() === '') {
-      setNomeErro('')
-      return
+    if (valor.trim() === "") {
+      setNomeErro("");
+      return;
     }
 
     if (valor.trim().length < 3) {
-      setNomeErro('Digite pelo menos 3 letras')
+      setNomeErro("Digite pelo menos 3 letras");
     } else {
-      setNomeErro('')
+      setNomeErro("");
     }
-  }
+  };
 
   const handleTelefoneChange = (e) => {
-    let valor = e.target.value.replace(/\D/g, '')
-    valor = valor.slice(0, 11)
+    let valor = e.target.value.replace(/\D/g, "");
+    valor = valor.slice(0, 11);
 
-    if (valor.length >= 1) valor = '(' + valor
-    if (valor.length >= 3) valor = valor.slice(0, 3) + ') ' + valor.slice(3)
-    if (valor.length >= 10) valor = valor.slice(0, 10) + '-' + valor.slice(10)
+    if (valor.length >= 1) valor = "(" + valor;
+    if (valor.length >= 3) valor = valor.slice(0, 3) + ") " + valor.slice(3);
+    if (valor.length >= 10) valor = valor.slice(0, 10) + "-" + valor.slice(10);
 
-    setTelefone(valor)
+    setTelefone(valor);
 
-    const soNumeros = valor.replace(/\D/g, '')
+    const soNumeros = valor.replace(/\D/g, "");
     if (soNumeros.length === 0) {
-      setTelefoneErro('')
-      return
+      setTelefoneErro("");
+      return;
     }
 
     if (soNumeros.length < 11) {
-      setTelefoneErro('Telefone incompleto')
+      setTelefoneErro("Telefone incompleto");
     } else {
-      setTelefoneErro('')
+      setTelefoneErro("");
     }
-  }
+  };
 
   const enviarParaPlanilha = async () => {
     try {
       await fetch(
-        'https://cors-proxy-seven-beige.vercel.app/api/proxy?url=' +
+        "https://cors-proxy-seven-beige.vercel.app/api/proxy?url=" +
           encodeURIComponent(
-            'https://script.google.com/macros/s/AKfycbwWTNo_3L1kz9xffgOqa0udGzvJpD8Y2nDzyh5aZNYKjSfL_KqmXA1J7MuR0KCREHvZ4w/exec',
+            "https://script.google.com/macros/s/AKfycbwWTNo_3L1kz9xffgOqa0udGzvJpD8Y2nDzyh5aZNYKjSfL_KqmXA1J7MuR0KCREHvZ4w/exec",
           ),
         {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             nome,
             email: telefone,
             origem: content.origem,
           }),
         },
-      )
+      );
     } catch (error) {
       // console.log('Erro ao enviar:', error)
     }
-  }
+  };
 
-  const { colorMode, whatsAppColor } = useColorMode()
+  const { colorMode, whatsAppColor } = useColorMode();
 
-  const themes = whatsAppColor ? whatsAppThemes : defaultButtonThemes
+  const themes = whatsAppColor ? whatsAppThemes : defaultButtonThemes;
 
-  const colorButton = themes[colorMode] || themes.default
-  let iconColor
+  const colorButton = themes[colorMode] || themes.default;
+  let iconColor;
 
   if (whatsAppColor) {
     // iconColor = colorMode === 'dark' ? '#fff' : '#000'
-    iconColor = '#fff'
+    iconColor = "#fff";
   } else {
     iconColor =
-      colorMode === 'dark' || colorMode === 'defaultDark' ? '#000' : '#fff'
+      colorMode === "dark" || colorMode === "defaultDark" ? "#000" : "#fff";
   }
 
   return (
@@ -106,11 +106,11 @@ export default function WhatsappAnimated() {
         href={content.texts.links.ctaWhatsapp}
         target="_blanck"
         rel="noopener noreferrer"
-        className={`fixed clickevent bottom-4 right-4 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full border border-white/30 ${colorButton}`}
+        className={`fixed clickevent bottom-4 right-4 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full border border-white/30 bg-wppDark ${colorButton}`}
         aria-label="Botão flutuante de WhatsApp para contato"
       >
         <div
-          className={`absolute z-10 top-0 left-0 w-full h-full rounded-full animate-ping border border-white ${colorButton} `}
+          className={`absolute z-10 top-0 left-0 w-full h-full rounded-full animate-ping border border-gray-500 ${colorButton} bg-wppDark`}
         ></div>
         <div className="relative z-20 ">
           <svg
@@ -134,5 +134,5 @@ export default function WhatsappAnimated() {
         </div>
       </a>
     </>
-  )
+  );
 }

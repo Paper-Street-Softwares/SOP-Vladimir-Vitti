@@ -1,15 +1,15 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { MessageCircle, Menu, X } from 'lucide-react'
-import { Button } from '../interactives/ButtonNovoTemplate'
-import { motion } from 'framer-motion'
-import SectionAria from '../../components/sectionElements/SectionArea'
-import SectionWrapper from '../../components/sectionElements/SectionWrapper'
-import content from '../../content/content'
-import { Link } from 'react-scroll'
-import ButtonReflexo from '../interactives/ButtonReflexo'
-import { useContext } from 'react'
-import SidebarSocial from '../sectionElements/SidebarSocial'
+import React from "react";
+import { useState, useEffect } from "react";
+import { MessageCircle, Menu, X } from "lucide-react";
+import { Button } from "../interactives/ButtonNovoTemplate";
+import { motion } from "framer-motion";
+import SectionAria from "../../components/sectionElements/SectionArea";
+import SectionWrapper from "../../components/sectionElements/SectionWrapper";
+import content from "../../content/content";
+import { Link } from "react-scroll";
+import ButtonReflexo from "../interactives/ButtonReflexo";
+import { useContext } from "react";
+import SidebarSocial from "../sectionElements/SidebarSocial";
 
 function NavbarNovaTemplate({
   colorMode,
@@ -21,57 +21,57 @@ function NavbarNovaTemplate({
   bgOpacitySidebar,
   borderButtons,
 }) {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [active, setActive] = useState(null)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [active, setActive] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const labels = content.texts.navbar.menuItems
-  const ids = content.texts.navbar.menuId
+  const labels = content.texts.navbar.menuItems;
+  const ids = content.texts.navbar.menuId;
 
   switch (colorMode) {
-    case 'light':
-      backgrondMode = 'bg-white'
-      textOpacity = 'text-corTitulosPreto'
-      hoverLinks = ' bg-gradient-to-r from-primaryDark to-primaryDark '
-      colorMenu = 'text-primaryDark'
-      bgOpacitySidebar = 'bg-white/70'
-      backgrondModeActive = 'bg-transparent'
+    case "light":
+      backgrondMode = "bg-white";
+      textOpacity = "text-corTitulosPreto";
+      hoverLinks = " bg-gradient-to-r from-primaryDark to-primaryDark ";
+      colorMenu = "text-primaryDark";
+      bgOpacitySidebar = "bg-white/70";
+      backgrondModeActive = "bg-transparent";
 
-      break
-    case 'dark':
-      backgrondMode = 'bg-black'
-      textOpacity = 'text-corOutrosTextosBranca'
-      hoverLinks = ' bg-gradient-to-r from-primaryLight to-primaryLight '
-      colorMenu = 'text-primaryLight'
-      bgOpacitySidebar = 'bg-black/70'
-      backgrondModeActive = 'bg-transparent'
+      break;
+    case "dark":
+      backgrondMode = "bg-black";
+      textOpacity = "text-corOutrosTextosBranca";
+      hoverLinks = " bg-gradient-to-r from-primaryLight to-primaryLight ";
+      colorMenu = "text-primaryLight";
+      bgOpacitySidebar = "bg-black/70";
+      backgrondModeActive = "bg-transparent";
 
-      break
-    case 'defaultDark':
-      backgrondMode = 'bg-primaryDark'
-      textOpacity = 'text-corTitulosBranca'
-      hoverLinks = ' bg-gradient-to-r from-white to-white '
-      colorMenu = 'text-white'
-      bgOpacitySidebar = 'bg-white/70'
-      backgrondModeActive = 'bg-primaryDark'
-      backgrondModeActive = 'bg-transparent'
-      break
+      break;
+    case "defaultDark":
+      backgrondMode = "bg-primaryDark";
+      textOpacity = "text-corTitulosBranca";
+      hoverLinks = " bg-gradient-to-r from-white to-white ";
+      colorMenu = "text-white";
+      bgOpacitySidebar = "bg-white/70";
+      backgrondModeActive = "bg-primaryDark";
+      backgrondModeActive = "bg-transparent";
+      break;
 
-    case 'defaultLight':
-      backgrondMode = 'bg-white'
-      textOpacity = 'text-corTitulosPreto'
-      hoverLinks = ' bg-gradient-to-r from-primaryDark to-primaryDark '
-      colorMenu = 'text-primaryDark'
-      bgOpacitySidebar = 'bg-white/70'
-      backgrondModeActive = 'bg-transparent'
+    case "defaultLight":
+      backgrondMode = "bg-white";
+      textOpacity = "text-corTitulosPreto";
+      hoverLinks = " bg-gradient-to-r from-primaryDark to-primaryDark ";
+      colorMenu = "text-primaryDark";
+      bgOpacitySidebar = "bg-white/70";
+      backgrondModeActive = "bg-white";
   }
 
   return (
@@ -87,8 +87,8 @@ function NavbarNovaTemplate({
           <div
             className={`flex flex-col z-20 relative  ${
               isScrolled
-                ? 'w-[10%] tablet1:w-[8%] desktop1:w-[5%] transition-all duration-700'
-                : 'py-3 w-[20%] tablet1:w-[15%] tablet2:w-[10%] desktop1:w-[8%] desktop2:w-[6%] transition-all duration-700'
+                ? "w-[10%] tablet1:w-[8%] desktop1:w-[5%] transition-all duration-700"
+                : "py-0 w-[26%] phone3:w-[20%] tablet1:w-[19%] tablet2:w-[13%] desktop1:w-[10%] desktop2:w-[8%] transition-all duration-700"
             }`}
           >
             <a
@@ -119,11 +119,11 @@ function NavbarNovaTemplate({
           {/* Desktop Nav */}
           <div className="hidden desktop1:flex items-center gap-8 text-sm font-secondFont font-medium">
             {labels.map((item, index) => {
-              const id = ids[index]
+              const id = ids[index];
 
               return (
                 <ul>
-                  {' '}
+                  {" "}
                   <li key={id}>
                     <a
                       href={`#${id}`}
@@ -132,16 +132,16 @@ function NavbarNovaTemplate({
                       data-track={id}
                       className={`cursor-pointer ${hoverLinks} bg-[length:0%_2px] bg-no-repeat bg-left-bottom pb-1 transition-[background-size] duration-300 hover:bg-[length:100%_2px] ${textOpacity} font-secondFont`}
                       onClick={(e) => {
-                        e.preventDefault()
-                        const el = document.getElementById(id)
+                        e.preventDefault();
+                        const el = document.getElementById(id);
                         if (el) {
-                          const yOffset = -90
+                          const yOffset = -90;
                           const y =
                             el.getBoundingClientRect().top +
                             window.scrollY +
-                            yOffset
+                            yOffset;
 
-                          window.scrollTo({ top: y, behavior: 'smooth' })
+                          window.scrollTo({ top: y, behavior: "smooth" });
                         }
                       }}
                     >
@@ -149,7 +149,7 @@ function NavbarNovaTemplate({
                     </a>
                   </li>
                 </ul>
-              )
+              );
             })}
             <ButtonReflexo
               label="Contato"
@@ -264,7 +264,7 @@ function NavbarNovaTemplate({
         </div>
       </nav>
     </SectionWrapper>
-  )
+  );
 }
 
-export default NavbarNovaTemplate
+export default NavbarNovaTemplate;

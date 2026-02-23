@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
-import WhatsAppIcon from '../../assets/importAssets/WhatsAppIcon.webp'
-import emailjs from 'emailjs-com'
+import React, { useState } from "react";
+import WhatsAppIcon from "../../assets/importAssets/WhatsAppIcon.webp";
+import emailjs from "emailjs-com";
 import {
   User,
   Phone,
@@ -11,55 +11,59 @@ import {
   ListChecks,
   Calendar,
   AlertTriangle,
-  MessageCircle,
-} from 'lucide-react'
+  Send,
+  MessageSquare,
+} from "lucide-react";
+import ButtonReflexo from "./ButtonReflexo";
+import content from "../../content/content";
 
 const WhatsappForm = () => {
-  const [name, setName] = useState('')
-  const [phone, setPhone] = useState('')
-  const [email, setEmail] = useState('')
-  const [contractInfo, setContractInfo] = useState('')
-  const [type, setType] = useState('')
-  const [financedValue, setFinancedValue] = useState('')
-  const [installments, setInstallments] = useState('')
-  const [paidInstallments, setPaidInstallments] = useState('')
-  const [installmentValue, setInstallmentValue] = useState('')
-  const [lateInstallments, setLateInstallments] = useState('')
-  const [message, setMessage] = useState('')
-  const [errors, setErrors] = useState({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [contractInfo, setContractInfo] = useState("");
+  const [type, setType] = useState("");
+  const [financedValue, setFinancedValue] = useState("");
+  const [installments, setInstallments] = useState("");
+  const [paidInstallments, setPaidInstallments] = useState("");
+  const [installmentValue, setInstallmentValue] = useState("");
+  const [lateInstallments, setLateInstallments] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendToEmail = () => {
-    setIsSubmitting(true)
-    const validationErrors = {}
+    setIsSubmitting(true);
+    const validationErrors = {};
 
-    if (!name) validationErrors.name = 'O campo Nome é obrigatório.'
-    if (!phone) validationErrors.phone = 'O campo Telefone é obrigatório.'
-    if (!email) validationErrors.email = 'O campo Email é obrigatório.'
+    // if (!name) validationErrors.name = "O campo Nome é obrigatório.";
+    // if (!phone) validationErrors.phone = "O campo Telefone é obrigatório.";
+    // if (!email) validationErrors.email = "O campo Email é obrigatório.";
     if (!contractInfo)
       validationErrors.contractInfo =
-        'O campo Informações do contrato é obrigatório.'
-    if (!type) validationErrors.type = 'O campo Tipo é obrigatório.'
+        "O campo Informações do contrato é obrigatório.";
+    if (!type) validationErrors.type = "O campo Tipo é obrigatório.";
     if (!financedValue)
-      validationErrors.financedValue = 'O campo Valor Financiado é obrigatório.'
+      validationErrors.financedValue =
+        "O campo Valor Financiado é obrigatório.";
     if (!installments)
       validationErrors.installments =
-        'O campo Quantidade de Parcelas é obrigatório.'
+        "O campo Quantidade de Parcelas é obrigatório.";
     if (!paidInstallments)
       validationErrors.paidInstallments =
-        'O campo Quantidade de parcelas pagas é obrigatório.'
+        "O campo Quantidade de parcelas pagas é obrigatório.";
     if (!installmentValue)
       validationErrors.installmentValue =
-        'O campo Valor da Parcela é obrigatório.'
+        "O campo Valor da Parcela é obrigatório.";
     if (!lateInstallments)
       validationErrors.lateInstallments =
-        'O campo Parcelas em atraso é obrigatório.'
-    if (!message) validationErrors.message = 'O campo Mensagem é obrigatório.'
+        "O campo Parcelas em atraso é obrigatório.";
+    if (!message) validationErrors.message = "O campo Mensagem é obrigatório.";
 
     if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors)
-      setIsSubmitting(false)
-      return
+      setErrors(validationErrors);
+      setIsSubmitting(false);
+      return;
     }
 
     const templateParams = {
@@ -74,410 +78,212 @@ const WhatsappForm = () => {
       installmentValue,
       lateInstallments,
       message,
-    }
+    };
 
     emailjs
       .send(
-        'service_gik4w8p', // substitua pelo seu Service ID
-        'template_o4kc0ak', // substitua pelo seu Template ID
+        "service_gik4w8p", // substitua pelo seu Service ID
+        "template_o4kc0ak", // substitua pelo seu Template ID
         templateParams,
-        '8bJXn-qPMOzTraXbd' // substitua pela sua Public Key
+        "8bJXn-qPMOzTraXbd", // substitua pela sua Public Key
       )
       .then(
         () => {
-          alert('Mensagem enviada por email com sucesso!')
-          setIsSubmitting(false)
+          alert("Mensagem enviada por email com sucesso!");
+          setIsSubmitting(false);
           // Limpar campos
-          setName('')
-          setPhone('')
-          setEmail('')
-          setContractInfo('')
-          setType('')
-          setFinancedValue('')
-          setInstallments('')
-          setPaidInstallments('')
-          setInstallmentValue('')
-          setLateInstallments('')
-          setMessage('')
-          setErrors({})
+          setName("");
+          setPhone("");
+          setEmail("");
+          setContractInfo("");
+          setType("");
+          setFinancedValue("");
+          setInstallments("");
+          setPaidInstallments("");
+          setInstallmentValue("");
+          setLateInstallments("");
+          setMessage("");
+          setErrors({});
         },
         (error) => {
-          alert('Erro ao enviar email: ' + error.text)
-          setIsSubmitting(false)
-        }
-      )
-  }
+          alert("Erro ao enviar email: " + error.text);
+          setIsSubmitting(false);
+        },
+      );
+  };
+
+  const sendToWhatsApp = () => {
+    setIsSubmitting(true);
+
+    const validationErrors = {};
+
+    // Só a mensagem é obrigatória
+    if (!message) validationErrors.message = "O campo Mensagem é obrigatório.";
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setIsSubmitting(false);
+      return;
+    }
+
+    const phoneWhatsApp = "5511996810390";
+
+    const text = `
+Nova mensagem enviada pelo site.
+
+Tipo: ${type || "Não informado"}
+Nome: ${name || "Não informado"}
+Telefone: ${phone || "Não informado"}
+E-mail: ${email || "Não informado"}
+
+Mensagem: ${message}
+`;
+
+    const url = `https://wa.me/${phoneWhatsApp}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+
+    // limpa só depois de enviar
+    setType("");
+    setName("");
+    setPhone("");
+    setEmail("");
+    setMessage("");
+    setErrors({});
+    setIsSubmitting(false);
+  };
 
   return (
-    <div className="bg-black/90 p-6 rounded-[10px] w-full h-auto">
-      <div className="w-full text-paragraph3 phone3:text-paragraph4">
-        {/* Nome */}
-        <div className="mb-6">
-          <label
-            htmlFor="name"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Nome:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <User />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => {
-                const value = e.target.value
-                setName(value.charAt(0).toUpperCase() + value.slice(1))
-              }}
-              placeholder="Nome"
-              required
-            />
-          </div>
-          {errors.name && <p className="text-red-500 mt-2">{errors.name}</p>}
-        </div>
+    <div className="bg-white shadow-xl rounded-2xl p-10 w-full max-w-xl mx-auto font-secondFont">
+      <h2 className="text-2xl font-bold text-center mb-2">Entre em Contato</h2>
+      <p className="text-center text-gray-400 mb-6">
+        Preencha o formulário abaixo e entraremos em contato
+      </p>
 
-        {/* Telefone */}
-        <div className="mb-6">
-          <label
-            htmlFor="phone"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Telefone:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <Phone />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="tel"
-              id="phone"
-              value={phone}
-              onChange={(e) => {
-                let value = e.target.value
+      {/* Assunto */}
+      <div className="mb-4">
+        <label className="block font-medium mb-1">
+          Assunto <span className="text-primaryLight">*</span>
+        </label>
+        <select
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          className="w-full border border-primaryLight rounded-lg px-3 py-2"
+        >
+          <option value="">Selecione o assunto</option>
+          <option value="Vendas e Informações Comerciais">
+            Vendas e Informações Comerciais
+          </option>
+          <option value="Dúvidas sobre LGPD">
+            Dúvidas ou Solicitações sobre LGPD
+          </option>
+          <option value="Canal de Denúncias">
+            Canal de Denúncias (Ética e Conduta)
+          </option>
+        </select>
+      </div>
 
-                // Remove tudo que não seja número
-                value = value.replace(/\D/g, '')
+      {/* Nome */}
+      <div className="mb-4">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
+            <User width={18} /> Nome{" "}
+            <span className="text-primaryLight">*</span>
+          </p>
+        </label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Seu nome completo"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 outline-none"
+        />
+      </div>
 
-                // Limita a 11 dígitos (padrão celular brasileiro)
-                value = value.substring(0, 11)
+      {/* Email */}
+      <div className="mb-4">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
+            <Mail width={18} /> Email{" "}
+            <span className="text-primaryLight">*</span>
+          </p>{" "}
+        </label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="seu@email.com"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 outline-none"
+        />
+      </div>
 
-                // Aplica a formatação
-                if (value.length > 6) {
-                  value = `(${value.substring(0, 2)}) ${value.substring(
-                    2,
-                    7
-                  )}-${value.substring(7)}`
-                } else if (value.length > 2) {
-                  value = `(${value.substring(0, 2)}) ${value.substring(2)}`
-                } else if (value.length > 0) {
-                  value = `(${value}`
-                }
+      {/* WhatsApp */}
+      <div className="mb-4">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
+            <Phone width={18} /> WhatsApp{" "}
+            <span className="text-primaryLight">*</span>
+          </p>{" "}
+        </label>
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="(00) 00000-0000"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 outline-none"
+        />
+      </div>
 
-                setPhone(value)
-              }}
-              placeholder="(00) 00000-0000"
-              required
-            />
-          </div>
-          {errors.phone && <p className="text-red-500 mt-2">{errors.phone}</p>}
-        </div>
-
-        {/* Email */}
-        <div className="mb-6">
-          <label
-            htmlFor="email"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Email:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <Mail />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="E-mail"
-              required
-            />
-          </div>
-          {errors.email && <p className="text-red-500 mt-2">{errors.email}</p>}
-        </div>
-
-        {/* Informações do contrato */}
-        <div className="mb-6">
-          <label
-            htmlFor="contractInfo"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Informações do contrato:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <FileText />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="text"
-              id="contractInfo"
-              value={contractInfo}
-              onChange={(e) => {
-                const value = e.target.value
-                setContractInfo(value.charAt(0).toUpperCase() + value.slice(1))
-              }}
-              placeholder="Contrato"
-              required
-            />
-          </div>
-          {errors.contractInfo && (
-            <p className="text-red-500 mt-2">{errors.contractInfo}</p>
-          )}
-        </div>
-
-        {/* Tipo */}
-        <div className="mb-6">
-          <label
-            htmlFor="type"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Tipo:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <ListChecks />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="text"
-              id="type"
-              value={type}
-              onChange={(e) => {
-                const value = e.target.value
-                setType(value.charAt(0).toUpperCase() + value.slice(1))
-              }}
-              placeholder="Tipo"
-              required
-            />
-          </div>
-          {errors.type && <p className="text-red-500 mt-2">{errors.type}</p>}
-        </div>
-
-        {/* Valor Financiado */}
-        <div className="mb-6">
-          <label
-            htmlFor="financedValue"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Valor Financiado:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <DollarSign />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="text"
-              id="financedValue"
-              value={financedValue}
-              onChange={(e) => {
-                let value = e.target.value
-
-                // Remove tudo que não seja número
-                value = value.replace(/\D/g, '')
-
-                // Converte para reais
-                value = (Number(value) / 100).toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })
-
-                setFinancedValue(value)
-              }}
-              placeholder="R$ 0,00"
-              required
-            />
-          </div>
-          {errors.financedValue && (
-            <p className="text-red-500 mt-2">{errors.financedValue}</p>
-          )}
-        </div>
-
-        {/* Quantidade de Parcelas */}
-        <div className="mb-6">
-          <label
-            htmlFor="installments"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Quantidade de Parcelas:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <Calendar />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="number"
-              id="installments"
-              value={installments}
-              onChange={(e) => setInstallments(e.target.value)}
-              placeholder="Ex: 36"
-              required
-            />
-          </div>
-          {errors.installments && (
-            <p className="text-red-500 mt-2">{errors.installments}</p>
-          )}
-        </div>
-
-        {/* Parcelas Pagas */}
-        <div className="mb-6">
-          <label
-            htmlFor="paidInstallments"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Parcelas Pagas:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <ListChecks />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="number"
-              id="paidInstallments"
-              value={paidInstallments}
-              onChange={(e) => setPaidInstallments(e.target.value)}
-              placeholder="Ex: 12"
-              required
-            />
-          </div>
-          {errors.paidInstallments && (
-            <p className="text-red-500 mt-2">{errors.paidInstallments}</p>
-          )}
-        </div>
-
-        {/* Valor da Parcela */}
-        <div className="mb-6">
-          <label
-            htmlFor="installmentValue"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Valor da Parcela:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <DollarSign />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="text"
-              id="installmentValue"
-              value={installmentValue}
-              onChange={(e) => {
-                let value = e.target.value
-
-                // Remove tudo que não seja número
-                value = value.replace(/\D/g, '')
-
-                // Converte para reais
-                value = (Number(value) / 100).toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })
-
-                setInstallmentValue(value)
-              }}
-              placeholder="R$ 500,00"
-              required
-            />
-          </div>
-          {errors.installmentValue && (
-            <p className="text-red-500 mt-2">{errors.installmentValue}</p>
-          )}
-        </div>
-
-        {/* Parcelas em atraso */}
-        <div className="mb-6">
-          <label
-            htmlFor="lateInstallments"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Parcelas em atraso:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-center justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <AlertTriangle />
-            </div>
-            <input
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              type="number"
-              id="lateInstallments"
-              value={lateInstallments}
-              onChange={(e) => setLateInstallments(e.target.value)}
-              placeholder="Ex: 2"
-              required
-            />
-          </div>
-          {errors.lateInstallments && (
-            <p className="text-red-500 mt-2">{errors.lateInstallments}</p>
-          )}
-        </div>
-
-        {/* Mensagem */}
-        <div className="mb-6">
-          <label
-            htmlFor="message"
-            className="block font-medium mb-1 text-gray-300"
-          >
-            Mensagem:
-          </label>
-          <div className="flex text-gray-500">
-            <div className="flex items-start justify-center w-12 px-1 bg-bgSectionLight rounded-sm">
-              <MessageCircle className="m-auto" />
-            </div>
-            <textarea
-              className=" px-1 py-2 border-0 rounded-none bg-transparent border-b-2 border-white/30 w-[90%] ml-4 text-white outline-none autofill-none"
-              id="message"
-              value={message}
-              onChange={(e) => {
-                const value = e.target.value
-                setMessage(value.charAt(0).toUpperCase() + value.slice(1))
-              }}
-              placeholder="Mensagem"
-              required
-            />
-          </div>
+      {/* Mensagem */}
+      <div className="mb-2">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
+            <MessageSquare width={18} /> Mensagem{" "}
+            <span className="text-primaryLight">*</span>
+          </p>{" "}
           {errors.message && (
             <p className="text-red-500 mt-2">{errors.message}</p>
           )}
+        </label>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Digite sua mensagem..."
+          maxLength={1000}
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 h-28 resize-none"
+          required
+        />
+        <div className="text-right text-sm text-gray-400">
+          {message.length}/1000 caracteres
         </div>
-
-        {/* Botão */}
-        <button
-          type="button"
-          className="flex items-center w-full font-medium text-black bg-primaryLight transition-all rounded-lg h-10 phone2:h-12 hover:scale-105"
-          onClick={sendToEmail}
-          disabled={isSubmitting}
-        >
-          <div className="flex items-center justify-center w-full">
-            <img
-              src={WhatsAppIcon}
-              className="w-6 h-6 mr-2 phone2:w-8 phone2:h-8"
-              alt="Email Icon"
-            />
-            <p>{isSubmitting ? 'Enviando...' : 'Solicitar análise gratuita'}</p>
-          </div>
-        </button>
       </div>
-    </div>
-  )
-}
 
-export default WhatsappForm
+      {/* Botão */}
+      <button
+        onClick={sendToWhatsApp}
+        disabled={isSubmitting}
+        className="mt-6 w-full bg-primaryDark hover:scale-90 duration-500 transition-all text-white py-3 rounded-lg flex items-center justify-center gap-2"
+      >
+        {isSubmitting ? (
+          "Enviando..."
+        ) : (
+          <p className="flex gap-2 items-center">
+            <span>
+              <Send width={18} />
+            </span>
+            Enviar Mensagem
+          </p>
+        )}
+      </button>
+
+      <p className="text-xs text-center text-gray-400 mt-4">
+        Ao enviar este formulário, você concorda com nossa{" "}
+        <span className="text-primaryLight cursor-pointer">
+          Política de Privacidade
+        </span>
+      </p>
+    </div>
+  );
+};
+
+export default WhatsappForm;
