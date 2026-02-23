@@ -262,7 +262,7 @@ Mensagem: ${message}
       <button
         onClick={sendToWhatsApp}
         disabled={isSubmitting}
-        className="mt-6 w-full bg-primaryLight hover:scale-90 duration-500 transition-all text-white py-3 rounded-lg flex items-center justify-center gap-2"
+        className="mt-6 w-full bg-primaryDark hover:scale-90 duration-500 transition-all text-white py-3 rounded-lg flex items-center justify-center gap-2"
       >
         {isSubmitting ? (
           "Enviando..."

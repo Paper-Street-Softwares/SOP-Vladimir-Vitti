@@ -4,6 +4,7 @@ import SectionWrapper from "../sectionElements/SectionWrapper";
 import SectionHeaderNovo from "../sectionElements/SectionHeaderNovo";
 import WhatsappForm from "../interactives/WhatsappForm";
 import content from "../../content/content";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
 function FormNovoTemplate({ colorMode }) {
   return (
@@ -15,7 +16,9 @@ function FormNovoTemplate({ colorMode }) {
           subtitle="Envie sua mensagem pelo formulário e receba um atendimento claro, direto e profissional."
           colorMode={colorMode}
         />
-        <WhatsappForm />
+        <MotionDivDownToUp className={`w-full`}>
+          <WhatsappForm />
+        </MotionDivDownToUp>
       </SectionWrapper>
     </SectionArea>
   );
