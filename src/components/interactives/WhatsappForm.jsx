@@ -126,7 +126,7 @@ const WhatsappForm = () => {
       return;
     }
 
-    const phoneWhatsApp = "5571993064270";
+    const phoneWhatsApp = "5511996810390";
 
     const text = `
 Nova mensagem enviada pelo site.
@@ -154,7 +154,7 @@ Mensagem: ${message}
   };
 
   return (
-    <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-xl mx-auto">
+    <div className="bg-white shadow-xl rounded-2xl p-10 w-full max-w-xl mx-auto font-secondFont">
       <h2 className="text-2xl font-bold text-center mb-2">Entre em Contato</h2>
       <p className="text-center text-gray-400 mb-6">
         Preencha o formulário abaixo e entraremos em contato
@@ -162,13 +162,13 @@ Mensagem: ${message}
 
       {/* Assunto */}
       <div className="mb-4">
-        <label className="block font-light mb-1">
+        <label className="block font-medium mb-1">
           Assunto <span className="text-primaryLight">*</span>
         </label>
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="w-full border rounded-lg px-3 py-2"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2"
         >
           <option value="">Selecione o assunto</option>
           <option value="Vendas e Informações Comerciais">
@@ -185,8 +185,8 @@ Mensagem: ${message}
 
       {/* Nome */}
       <div className="mb-4">
-        <label className="block font-light mb-1">
-          <p className="flex items-center gap-2">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
             <User width={18} /> Nome{" "}
             <span className="text-primaryLight">*</span>
           </p>
@@ -196,14 +196,14 @@ Mensagem: ${message}
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Seu nome completo"
-          className="w-full border rounded-lg px-3 py-2"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 outline-none"
         />
       </div>
 
       {/* Email */}
       <div className="mb-4">
-        <label className="block font-light mb-1">
-          <p className="flex items-center gap-2">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
             <Mail width={18} /> Email{" "}
             <span className="text-primaryLight">*</span>
           </p>{" "}
@@ -213,14 +213,14 @@ Mensagem: ${message}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="seu@email.com"
-          className="w-full border rounded-lg px-3 py-2"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 outline-none"
         />
       </div>
 
       {/* WhatsApp */}
       <div className="mb-4">
-        <label className="block font-light mb-1">
-          <p className="flex items-center gap-2">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
             <Phone width={18} /> WhatsApp{" "}
             <span className="text-primaryLight">*</span>
           </p>{" "}
@@ -230,14 +230,14 @@ Mensagem: ${message}
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           placeholder="(00) 00000-0000"
-          className="w-full border rounded-lg px-3 py-2"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 outline-none"
         />
       </div>
 
       {/* Mensagem */}
       <div className="mb-2">
-        <label className="block font-light mb-1">
-          <p className="flex items-center gap-2">
+        <label className="block font-medium mb-1">
+          <p className="flex items-center text-[14px] gap-2">
             <MessageSquare width={18} /> Mensagem{" "}
             <span className="text-primaryLight">*</span>
           </p>{" "}
@@ -250,7 +250,7 @@ Mensagem: ${message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Digite sua mensagem..."
           maxLength={1000}
-          className="w-full border rounded-lg px-3 py-2 h-28 resize-none"
+          className="w-full border border-primaryLight rounded-lg px-3 py-2 h-28 resize-none"
           required
         />
         <div className="text-right text-sm text-gray-400">
