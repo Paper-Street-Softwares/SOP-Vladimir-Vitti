@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../interactives/ButtonNovoTemplate";
 import { motion } from "framer-motion";
-import { Phone, Check, BriefcaseBusiness } from "lucide-react";
+import { Phone, Check, BriefcaseBusiness, Building } from "lucide-react";
 import content from "../../content/content";
 import SectionArea from "../sectionElements/SectionArea";
 import SectionWrapper from "../sectionElements/SectionWrapper";
@@ -163,8 +163,7 @@ function HeroTemplateNovo({
                       className={`font-secondFont font-light flex gap-2 items-center ${textOpacity}`}
                     >
                       <div className="relative flex ">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                        <Building width={18} />
                       </div>
                       {content.texts.hero.obsHero.textTwo}
                     </span>

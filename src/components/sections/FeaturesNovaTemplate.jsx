@@ -41,15 +41,37 @@ function FeaturesNovaTemplate({ colorMode, accordion }) {
       image = "border-[8px] border-borderImage";
       break;
 
-    default:
+    case "defaultDark":
       backgroundMode = "bg-transparent";
-      bgAccordion = "#fff";
+      bgAccordion = "rgba(0,0,0,0.8)";
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      textDestaque = "text-primaryDark";
+      cardBg = "bg-dark";
+      iconBg = "bg-darkOpacity text-primaryLight";
+      image = "border-[8px] border-borderImage";
+      break;
+
+    case "light":
+      backgroundMode = "bg-transparent";
+      bgAccordion = "rgba(0,0,0,0.8)";
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      textDestaque = "text-primaryDark";
+      cardBg = "bg-dark";
+      iconBg = "bg-darkOpacity text-primaryLight";
+      image = "border-[8px] border-borderImage";
+      break;
+
+    case "defaultLight":
+      backgroundMode = "bg-transparent";
       text = "text-corTitulosPreto";
       textOpacity = "text-corOutrosTextosPreto";
-      textDestaque = "text-primaryDark";
-      cardBg = "bg-quartenary";
-      iconBg = "bg-white text-primaryDark";
-      image = "border-[8px] border-white";
+      textDestaque = "text-white";
+      cardBg = "bg-[color-mix(in_srgb,var(--primaryDark),black_30%)]";
+      iconBg = "bg-terciary/10 text-white";
+      image =
+        " border-[8px] border-[color-mix(in_srgb,var(--primaryDark),black_60%)]";
   }
 
   return (
@@ -63,13 +85,12 @@ function FeaturesNovaTemplate({ colorMode, accordion }) {
               destaque={content.texts.features.Destaque}
               secondPart={content.texts.features.SecondPart}
               subtitle={content.texts.features.subtitle}
-              type="article"
               colorMode={colorMode}
             />
 
             <MotionDivDownToUp>
               <div
-                className={`relative rounded-[1.5rem] overflow-hidden shadow-2xl ring-black/5 bg-gray-100 ${image}`}
+                className={`relative rounded-[1.5rem] overflow-hidden shadow-2xl ring-black/5 ${image}`}
               >
                 {" "}
                 <img
@@ -103,7 +124,7 @@ function FeaturesNovaTemplate({ colorMode, accordion }) {
                       {feature.icon}
                     </div>
 
-                    <h1 className={`font-bold text-md mb-2 ${text} w-full`}>
+                    <h1 className={`font-bold text-md mb-2 text-white w-full`}>
                       {feature.title}
                     </h1>
                   </div>
