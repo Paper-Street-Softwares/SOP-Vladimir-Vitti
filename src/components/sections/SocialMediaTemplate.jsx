@@ -1,11 +1,11 @@
-import React from 'react'
-import SectionArea from '../sectionElements/SectionArea'
-import SectionWrapper from '../sectionElements/SectionWrapper'
-import content from '../../content/content'
-import { Instagram, ArrowRight, Facebook } from 'lucide-react'
-import iconTikTok from '../../assets/imgs/icons/tiktok.png'
-import SectionHeaderNovo from '../sectionElements/SectionHeaderNovo'
-import MotionDivDownToUp from '../animation/MotionDivDownToUp'
+import React from "react";
+import SectionArea from "../sectionElements/SectionArea";
+import SectionWrapper from "../sectionElements/SectionWrapper";
+import content from "../../content/content";
+import { Instagram, ArrowRight, Facebook, Linkedin } from "lucide-react";
+import iconTikTok from "../../assets/imgs/icons/tiktok.png";
+import SectionHeaderNovo from "../sectionElements/SectionHeaderNovo";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
 function SocialMediaTemplate({ colorMode }) {
   let backgroundMode,
@@ -15,52 +15,52 @@ function SocialMediaTemplate({ colorMode }) {
     borderCard,
     arrowColor,
     imageBorder,
-    miniTag
+    miniTag;
 
   switch (colorMode) {
-    case 'light':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      cardBg = 'bg-white'
-      borderCard = 'border-border'
-      arrowColor = 'text-white'
-      imageBorder = 'border-white'
-      miniTag = 'text-primaryDark'
-      break
+    case "light":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      cardBg = "bg-white";
+      borderCard = "border-border";
+      arrowColor = "text-white";
+      imageBorder = "border-white";
+      miniTag = "text-primaryDark";
+      break;
 
-    case 'dark':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosBranca'
-      textOpacity = 'text-corOutrosTextosBranca'
-      cardBg = 'bg-gray-900'
-      borderCard = 'border-gray-700'
-      arrowColor = 'text-white'
-      imageBorder = 'border-borderImage'
-      miniTag = 'text-primaryLight'
-      break
+    case "dark":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      cardBg = "bg-gray-900";
+      borderCard = "border-gray-700";
+      arrowColor = "text-white";
+      imageBorder = "border-borderImage";
+      miniTag = "text-primaryLight";
+      break;
 
-    case 'defaultDark':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      cardBg = 'bg-white'
-      borderCard = 'border-border'
-      arrowColor = 'text-white'
-      imageBorder = 'border-white'
-      miniTag = 'text-primaryDark'
-      break
+    case "defaultDark":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      cardBg = "bg-white";
+      borderCard = "border-border";
+      arrowColor = "text-white";
+      imageBorder = "border-white";
+      miniTag = "text-primaryDark";
+      break;
 
-    case 'defaultLight':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosBranca'
-      textOpacity = 'text-corOutrosTextosBranca'
-      cardBg = 'bg-[color-mix(in_srgb,var(--primaryDark),black_60%)]'
-      borderCard = 'border-border'
-      arrowColor = 'text-white'
+    case "defaultLight":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      cardBg = "bg-[color-mix(in_srgb,var(--primaryDark),black_60%)]";
+      borderCard = "border-border";
+      arrowColor = "text-white";
       imageBorder =
-        ' border-[8px] border-[color-mix(in_srgb,var(--primaryDark),black_60%)]'
-      miniTag = 'text-primaryDark'
+        " border-[8px] border-[color-mix(in_srgb,var(--primaryDark),black_60%)]";
+      miniTag = "text-primaryDark";
   }
 
   return (
@@ -138,7 +138,7 @@ function SocialMediaTemplate({ colorMode }) {
                     </a>
                   )} */}
 
-                  {content.texts.links.instagram?.trim() && (
+                  {/* {content.texts.links.instagram?.trim() && (
                     <a
                       href={content.texts.links.instagram}
                       target="_blank"
@@ -165,7 +165,7 @@ function SocialMediaTemplate({ colorMode }) {
 
                       <ArrowRight className={`ml-auto w-5 h-5 ${arrowColor}`} />
                     </a>
-                  )}
+                  )} */}
 
                   {content.texts.links.instagramSecundario?.trim() && (
                     <a
@@ -184,6 +184,35 @@ function SocialMediaTemplate({ colorMode }) {
                           className={`font-bold font-secondFont text-lg ${text}`}
                         >
                           Instagram profissional
+                        </h1>
+                        <p
+                          className={`font-secondFont font-light text-sm ${textOpacity}`}
+                        >
+                          Dicas diárias e bastidores
+                        </p>
+                      </div>
+
+                      <ArrowRight className={`ml-auto w-5 h-5 ${arrowColor}`} />
+                    </a>
+                  )}
+
+                  {content.texts.links.linkedin?.trim() && (
+                    <a
+                      href={content.texts.links.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Link para LinkedIn"
+                      className={`group flex items-center gap-6 p-6 rounded-2xl border ${borderCard} hover:shadow-lg transition-all ${cardBg} hover:scale-105 hover:duration-500`}
+                    >
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-blue-600 to-blue-500 text-white flex items-center justify-center shrink-0">
+                        <Linkedin className="w-7 h-7" />
+                      </div>
+
+                      <div>
+                        <h1
+                          className={`font-bold font-secondFont text-lg ${text}`}
+                        >
+                          LinkedIn profissional
                         </h1>
                         <p
                           className={`font-secondFont font-light text-sm ${textOpacity}`}
@@ -231,7 +260,7 @@ function SocialMediaTemplate({ colorMode }) {
         </section>
       </SectionWrapper>
     </SectionArea>
-  )
+  );
 }
 
-export default SocialMediaTemplate
+export default SocialMediaTemplate;

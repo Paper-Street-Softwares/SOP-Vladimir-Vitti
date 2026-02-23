@@ -1,19 +1,23 @@
-import logo from '../assets/imgs/logo/logo.webp'
-import logoDesktop from '../assets/imgs/logo/logoDesktop.webp'
-import heroDefaultImg from '../assets/imgs/hero/lawHero.webp'
-import heroDefaultMobileImg from '../assets/imgs/hero/lawHeroMobile.webp'
+import logo from "../assets/imgs/logo/logo.webp";
+import logoDesktop from "../assets/imgs/logo/logoDesktop.webp";
+import heroDefaultImg from "../assets/imgs/hero/lawHero.webp";
+import heroDefaultMobileImg from "../assets/imgs/hero/lawHeroMobile.webp";
+import bgHero from "../assets/imgs/hero/bgImageHero.png";
 
-import imgFeatures from '../assets/imgs/features/imgServices.webp'
+import imgFeatures from "../assets/imgs/features/imgServices.webp";
 
-import aboutImg from '../assets/imgs/about/aboutImg.webp'
+import aboutImg from "../assets/imgs/about/aboutImg.webp";
 // import team1 from '../assets/imgs/team/team1.webp'
 // import team2 from '../assets/imgs/team/team2.webp'
-import aboutSocialImg from '../assets/imgs/about/aboutSocial.webp'
-import logo1 from '../assets/imgs/parceria/Logo1.webp'
-import logo2 from '../assets/imgs/parceria/Logo2.webp'
-import logo3 from '../assets/imgs/parceria/Logo3.webp'
+import aboutSocialImg from "../assets/imgs/about/aboutSocial.webp";
+import logo1 from "../assets/imgs/parceria/Logo1.webp";
+import logo2 from "../assets/imgs/parceria/Logo2.webp";
+import logo3 from "../assets/imgs/parceria/Logo3.webp";
+import logo4 from "../assets/imgs/parceria/Logo4.webp";
+import logo5 from "../assets/imgs/parceria/Logo5.webp";
+import logo6 from "../assets/imgs/parceria/Logo6.webp";
 
-import imgSteps from '../assets/imgs/steps/imgSteps.webp'
+import imgSteps from "../assets/imgs/steps/imgSteps.webp";
 
 import {
   Baby,
@@ -32,21 +36,21 @@ import {
   HandCoins,
   Check,
   Shield,
-} from 'lucide-react'
+} from "lucide-react";
 
-import { FileText } from 'lucide-react'
+import { FileText } from "lucide-react";
 
-const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear();
 
 export const infos = {
-  name: 'Dr. Vladimir Vitti',
-  email: 'contato', // Email desejado pelo cliente
-  emailSecundario: 'A_Definir', // Email desejado pelo cliente
-  domain: 'vvjrconsultoria.com', // Sem "www"
+  name: "Dr. Vladimir Vitti",
+  email: "contato", // Email desejado pelo cliente
+  emailSecundario: "A_Definir", // Email desejado pelo cliente
+  domain: "vvjrconsultoria.com", // Sem "www"
   phone: {
-    ddd: '11',
-    firstPart: '99681', // Apenas os 5 primeiros números (incluindo o 9)
-    secondPart: '0390', // Apenas os 4 últimos números
+    ddd: "11",
+    firstPart: "99681", // Apenas os 5 primeiros números (incluindo o 9)
+    secondPart: "0390", // Apenas os 4 últimos números
   },
   phoneSecundario: {
     ddd: <>A_Definir</>,
@@ -75,23 +79,27 @@ export const infos = {
   expediente: (
     <div>
       <p>Segunda a sexta-feira:</p>
-      <p>8h às 18h</p>
+      <p>
+        9h às 18h
+        <br /> <br />
+        <i> 24h em casos emergenciais</i>
+      </p>
     </div>
   ),
   obs: <span className="italic">A_Definir </span>,
-  instagramProfile: 'vittijradv', // Sem o @
-  instagramProfileSecundario: 'vvjrcompliance', // Sem o @
-  facebookProfile: '',
-  linkeDinProfile: '',
-  x: '',
-  tiktokProfile: '',
+  instagramProfile: "", // Sem o @
+  instagramProfileSecundario: "vvjrcompliance", // Sem o @
+  facebookProfile: "",
+  linkeDinProfile: "vladimirvittijunior",
+  x: "",
+  tiktokProfile: "",
 
   whatsappDefaultMessage:
-    'Olá! Vim através do site de vocês e gostaria de tirar umas dúvidas.',
+    "Olá! Vim através do site de vocês e gostaria de tirar umas dúvidas.",
   whatsChatDefaultMessage:
-    'Gostaria de falar conosco agora mesmo? Clque abaixo 👇',
-  slogan: '',
-}
+    "Gostaria de falar conosco agora mesmo? Clque abaixo 👇",
+  slogan: "",
+};
 
 const content = {
   texts: {
@@ -106,20 +114,20 @@ const content = {
         alt: `Logomarca ${infos.name}`,
       },
       menuItems: [
-        'Início',
-        'Serviços',
-        'Sobre',
-        'Perguntas',
+        "Início",
+        "Serviços",
+        "Sobre",
+        // "Perguntas",
         // 'Blog',
         // 'Mapa',
       ],
-      menuId: ['home', 'feature', 'about', 'faq'],
-      ariaLabel: 'Botão de Contato',
-      ctaButtonText: 'Contato',
-      ctaButtonTextResponsive: 'Contato',
+      menuId: ["home", "feature", "about"],
+      ariaLabel: "Botão de Contato",
+      ctaButtonText: "Contato",
+      ctaButtonTextResponsive: "Contato",
     },
     hero: {
-      miniTag: <>ADVOCACIA DE COMPLIANCE</>,
+      miniTag: <>VLADIMIR VITTI JR. ADVOCACIA DE COMPLIANCE</>,
       FirstPart: <span>O melhor da advocacia com a</span>,
       Destaque: (
         <span className="destaque relative italic font-light">
@@ -135,10 +143,11 @@ const content = {
       ),
       heroDefaultImage: heroDefaultImg, // img da pessoa mobile
       heroDefaulMobiletImg: heroDefaultMobileImg,
+      bgHero: bgHero,
 
-      alt: 'Imagem ilustrativa da Seção Início',
+      alt: "Imagem ilustrativa da Seção Início",
       ctaButtonAriaLabel:
-        'Botão para chamada de ação para contato pelo whatsapp',
+        "Botão para chamada de ação para contato pelo whatsapp",
       ctaButtonText: <>Proteja sua empresa agora</>,
       ctaButtonTextSecondary: <>A_Definir</>,
       obsHero: {
@@ -147,9 +156,14 @@ const content = {
         text: (
           <>Atendimento prioritariamente online via Google Meet e WhatsApp.</>
         ),
-        textTwo: <>A_Definir</>,
+        textTwo: (
+          <>
+            Estrutura tecnológica moderna para proporcionar atendimento ágil e
+            gestão organizada dos processos.
+          </>
+        ),
       },
-      secondaryCta: 'Contato',
+      secondaryCta: "Contato",
     },
     important: {
       miniTag: <>A_Definir</>,
@@ -176,7 +190,7 @@ const content = {
       ctaButtonText: <>A_Definir</>,
     },
     features: {
-      miniTag: <>Como podemos ajudar</>,
+      miniTag: <>Soluções de ponta-a-ponta</>,
       FirstPart: <span>Atuação </span>,
       Destaque: <span className="italic font-light">jurídica</span>,
       SecondPart: <span>e compliance integradas</span>,
@@ -192,7 +206,7 @@ const content = {
       subtitleMessageFeature: <>advocacia e compliance</>,
       cards: {
         card1: {
-          title: <>Compliance e Direito Sancionatório</>,
+          title: <>Pessoas Físicas e Empresas</>,
           subtitle: (
             <>
               Atuação jurídica especializada para proteger empresas e gestores
@@ -207,13 +221,98 @@ const content = {
               A_Definir
             </div>
           ),
+          subCards: {
+            card1: {
+              title: "Compliance",
+              description: (
+                <>
+                  Programa de Compliance 360°
+                  <br />
+                  Programa de Integridade Anticorrupção e Suborno
+                  <br />
+                  Programa de Compliance Antiassédio
+                  <br />
+                  Programa de LGPD
+                  <br />
+                  Gestão de Crises
+                  <br />
+                  Investigações Internas
+                  <br />
+                  Treinamentos e Palestras
+                  <br />
+                  Due Diligence/ Background check
+                  <br />
+                  Gestão e Tratamento de Canal de Denúncias
+                  <br />
+                  Risk Assessment (Avaliação de Riscos de Conformidade)
+                  <br />
+                  Auditoria de Conformidade
+                </>
+              ),
+            },
+            card2: {
+              title: "Assessoria Jurídica - Criminal e Administrativo",
+              description: (
+                <>
+                  Análise de Processos Criminais e Administrativos
+                  <br />
+                  Acordo de Leniência
+                  <br />
+                  Colaboração Premiada
+                  <br />
+                  Acordo de Não Persecução Penal (“Plea bargain”)
+                  <br />
+                  Transação Penal
+                  <br />
+                  Suspensão Condicional do Processo ou da Pena (“sursis”)
+                  <br />
+                  Termo de Ajustamento de Conduta (TAC)
+                  <br />
+                  Informante ("Whistleblower", artigo 4° da Lei 13.608/18)
+                  <br />
+                  Acordos extrajudiciais
+                </>
+              ),
+            },
+            card3: {
+              title: "Litigioso - Criminal e Administrativo",
+              description: (
+                <>
+                  Inquérito Policial
+                  <br />
+                  Inquérito Civil
+                  <br />
+                  Atuação em Prisões
+                  <br />
+                  Atuação em Sequestro/ Bloqueio de bens e valores
+                  <br />
+                  Defesa em Sindicâncias e Processos Administrativos (PAD, PAR,
+                  PA, AI,...)
+                  <br />
+                  Defesa em Ações Penais (geral)
+                  <br />
+                  Defesa em crimes contra o Patrimônio (fraudes, roubo e furto,
+                  receptação,...)
+                  <br />
+                  Defesa em crimes contra a Administração Pública (corrupção,
+                  tráfico de influência, contrabando e descaminha,...)
+                  <br />
+                  Defesa em crimes relacionados à Empresa (ambiental, Financeiro
+                  e Econômico, Tributário,...)
+                  <br />
+                  Assistente de Acusação
+                </>
+              ),
+            },
+          },
           icon: <Briefcase />,
-          buttonLabelModal: 'Fale Conosco',
-          buttonLabel: 'Saiba Mais',
+          buttonLabelModal: "Fale Conosco",
+          buttonLabel: "Saiba Mais",
         },
-
         card2: {
-          title: <>Consultoria de Integridade e Prevenção</>,
+          title: (
+            <>PJ - Complementar Departamentos Jurídicos, Compliance e RH</>
+          ),
           subtitle: (
             <>
               Estruturação de programas de compliance para reduzir riscos,
@@ -228,14 +327,97 @@ const content = {
               A_Definir
             </div>
           ),
+          subCards: {
+            card1: {
+              title: "Compliance",
+              description: (
+                <>
+                  Programa de Compliance 360°
+                  <br />
+                  Programa de Integridade Anticorrupção e Suborno
+                  <br />
+                  Programa de Compliance Antiassédio
+                  <br />
+                  Programa de LGPD
+                  <br />
+                  Gestão de Crises
+                  <br />
+                  Investigações Internas
+                  <br />
+                  Treinamentos e Palestras
+                  <br />
+                  Due Diligence/ Background check
+                  <br />
+                  Gestão e Tratamento de Canal de Denúncias
+                  <br />
+                  Risk Assessment (Avaliação de Riscos de Conformidade)
+                  <br />
+                  Auditoria de Conformidade
+                </>
+              ),
+            },
+            card2: {
+              title: "Assessoria Jurídica - Criminal e Administrativo",
+              description: (
+                <>
+                  Análise de Processos Criminais e Administrativos
+                  <br />
+                  Acordo de Leniência
+                  <br />
+                  Colaboração Premiada
+                  <br />
+                  Acordo de Não Persecução Penal (“Plea bargain”)
+                  <br />
+                  Transação Penal
+                  <br />
+                  Suspensão Condicional do Processo ou da Pena (“sursis”)
+                  <br />
+                  Termo de Ajustamento de Conduta (TAC)
+                  <br />
+                  Informante ("Whistleblower", artigo 4° da Lei 13.608/18)
+                  <br />
+                  Acordos extrajudiciais
+                </>
+              ),
+            },
+            card3: {
+              title: "Litigioso - Criminal e Administrativo",
+              description: (
+                <>
+                  Inquérito Policial
+                  <br />
+                  Inquérito Civil
+                  <br />
+                  Atuação em Prisões
+                  <br />
+                  Atuação em Sequestro/ Bloqueio de bens e valores
+                  <br />
+                  Defesa em Sindicâncias e Processos Administrativos (PAD, PAR,
+                  PA, AI,...)
+                  <br />
+                  Defesa em Ações Penais (geral)
+                  <br />
+                  Defesa em crimes contra o Patrimônio (fraudes, roubo e furto,
+                  receptação,...)
+                  <br />
+                  Defesa em crimes contra a Administração Pública (corrupção,
+                  tráfico de influência, contrabando e descaminha,...)
+                  <br />
+                  Defesa em crimes relacionados à Empresa (ambiental, Financeiro
+                  e Econômico, Tributário,...)
+                  <br />
+                  Assistente de Acusação
+                </>
+              ),
+            },
+          },
           icon: <FileText />,
 
-          buttonLabelModal: 'Fale Conosco',
-          buttonLabel: 'Saiba Mais',
+          buttonLabelModal: "Fale Conosco",
+          buttonLabel: "Saiba Mais",
         },
-
         card3: {
-          title: <>Prevenção de Riscos Jurídicos</>,
+          title: <>Escritórios e Consultorias</>,
           subtitle: (
             <>
               Análise estratégica das operações para identificar falhas antes
@@ -250,75 +432,95 @@ const content = {
               A_Definir
             </div>
           ),
+          subCards: {
+            card1: {
+              title: "Compliance",
+              description: (
+                <>
+                  Programa de Compliance 360°
+                  <br />
+                  Programa de Integridade Anticorrupção e Suborno
+                  <br />
+                  Programa de Compliance Antiassédio
+                  <br />
+                  Programa de LGPD
+                  <br />
+                  Gestão de Crises
+                  <br />
+                  Investigações Internas
+                  <br />
+                  Treinamentos e Palestras
+                  <br />
+                  Due Diligence/ Background check
+                  <br />
+                  Gestão e Tratamento de Canal de Denúncias
+                  <br />
+                  Risk Assessment (Avaliação de Riscos de Conformidade)
+                  <br />
+                  Auditoria de Conformidade
+                </>
+              ),
+            },
+            card2: {
+              title: "Assessoria Jurídica - Criminal e Administrativo",
+              description: (
+                <>
+                  Análise de Processos Criminais e Administrativos
+                  <br />
+                  Acordo de Leniência
+                  <br />
+                  Colaboração Premiada
+                  <br />
+                  Acordo de Não Persecução Penal (“Plea bargain”)
+                  <br />
+                  Transação Penal
+                  <br />
+                  Suspensão Condicional do Processo ou da Pena (“sursis”)
+                  <br />
+                  Termo de Ajustamento de Conduta (TAC)
+                  <br />
+                  Informante ("Whistleblower", artigo 4° da Lei 13.608/18)
+                  <br />
+                  Acordos extrajudiciais
+                </>
+              ),
+            },
+            card3: {
+              title: "Litigioso - Criminal e Administrativo",
+              description: (
+                <>
+                  Inquérito Policial
+                  <br />
+                  Inquérito Civil
+                  <br />
+                  Atuação em Prisões
+                  <br />
+                  Atuação em Sequestro/ Bloqueio de bens e valores
+                  <br />
+                  Defesa em Sindicâncias e Processos Administrativos (PAD, PAR,
+                  PA, AI,...)
+                  <br />
+                  Defesa em Ações Penais (geral)
+                  <br />
+                  Defesa em crimes contra o Patrimônio (fraudes, roubo e furto,
+                  receptação,...)
+                  <br />
+                  Defesa em crimes contra a Administração Pública (corrupção,
+                  tráfico de influência, contrabando e descaminha,...)
+                  <br />
+                  Defesa em crimes relacionados à Empresa (ambiental, Financeiro
+                  e Econômico, Tributário,...)
+                  <br />
+                  Assistente de Acusação
+                </>
+              ),
+            },
+          },
           icon: <Scale />,
-          buttonLabelModal: 'Fale Conosco',
-          buttonLabel: 'Saiba Mais',
-        },
-
-        card4: {
-          title: <>Gestão Jurídica de Crises</>,
-          subtitle: (
-            <>
-              Assessoria imediata em situações críticas para minimizar impactos
-              legais, financeiros e reputacionais.
-            </>
-          ),
-          description: (
-            <div>
-              A_Definir
-              <br />
-              A_Definir
-              <br />
-            </div>
-          ),
-          icon: <Gavel />,
-          buttonLabelModal: 'Fale Conosco',
-          buttonLabel: 'Saiba Mais',
-        },
-
-        card5: {
-          title: <>Defesa em Processos Sancionatórios</>,
-          subtitle: (
-            <>
-              Atuação firme e estratégica em processos que envolvem multas,
-              interdições, penalidades e responsabilizações.
-            </>
-          ),
-          description: (
-            <div>
-              A_Definir
-              <br />
-              <br />
-              A_Definir
-            </div>
-          ),
-          icon: <Shield />,
-          buttonLabelModal: 'Fale Conosco',
-          buttonLabel: 'Saiba Mais',
-        },
-
-        card6: {
-          title: <>Atuação em Casos de Alta Complexidade</>,
-          subtitle: (
-            <>
-              Defesa jurídica completa em cenários que envolvem risco de prisão,
-              sanções severas e exposição institucional.
-            </>
-          ),
-          description: (
-            <div>
-              A_Definir
-              <br />
-              <br />
-              A_Definir
-            </div>
-          ),
-          icon: <MessageSquare />,
-          buttonLabelModal: 'Fale Conosco',
-          buttonLabel: 'Saiba Mais',
+          buttonLabelModal: "Fale Conosco",
+          buttonLabel: "Saiba Mais",
         },
       },
-
       ctaButtonText: <>A_Definir</>,
     },
     emergency: {
@@ -336,9 +538,9 @@ const content = {
     about: {
       imagem: {
         img: aboutImg,
-        alt: 'Imagem ilustrativa da Seção Sobre',
+        alt: "Imagem ilustrativa da Seção Sobre",
       },
-      miniTag: <>QUEM É O DR. VLADIMIR VITTI</>,
+      miniTag: <>QUEM É VLADIMIR VITTI JR.</>,
       FirstPart: <span> Minha</span>,
       Destaque: <span className="italic font-light"> trajetória</span>,
       SecondPart: <span></span>,
@@ -358,7 +560,7 @@ const content = {
         </div>
       ),
       ctaButtonText: <>A_Definir</>,
-      buttonModalLabelAbout: 'Continuar lendo',
+      buttonModalLabelAbout: "Continuar lendo",
       modal: (
         <p className="font-secondFont">
           Desde a graduação, minha formação foi guiada por situações reais de
@@ -381,17 +583,22 @@ const content = {
           de riscos, assessoria estratégica e defesa firme em processos
           judiciais e administrativos, atuando também em parceria com
           escritórios e consultorias especializadas.
+          <br />
+          <br />
+          Conto com parceiros estratégicos em diversas áreas do Direito e
+          profissionais técnicos como TI/SI, Segurança e Medicina do Trabalho,
+          Auditores,... que complementam meus serviços
         </p>
       ),
-      paragraphModalCta: 'Entre em contato',
+      paragraphModalCta: "Entre em contato",
       titleModal: <>Minha trajetória</>,
-      ctaButtonAriaLabel: 'Botão para entrar em contato',
+      ctaButtonAriaLabel: "Botão para entrar em contato",
 
       aboutSocial: {
         img: {
           img: aboutSocialImg,
           alt: `Foto do Instagram do ${infos.name}`,
-          altDefault: 'Imagem ilustrativa da Seção de Redes Sociais',
+          altDefault: "Imagem ilustrativa da Seção de Redes Sociais",
         },
         miniTag: <>Redes sociais</>,
         title: <>Conecte-se conosco</>,
@@ -403,12 +610,12 @@ const content = {
           </>
         ),
         paragraph: <p></p>,
-        labelInstagram: 'Siga-nos no Instagram',
-        labelFacebook: 'Siga-nos no Facebook',
-        labelLinkedin: 'Siga-nos no LinkedIn',
-        labelX: 'Siga-nos no X',
-        labelTiktok: 'Siga-nos no Tik Tok',
-        labelYoutube: 'Siga-nos no Youtube',
+        labelInstagram: "Siga-nos no Instagram",
+        labelFacebook: "Siga-nos no Facebook",
+        labelLinkedin: "Siga-nos no LinkedIn",
+        labelX: "Siga-nos no X",
+        labelTiktok: "Siga-nos no Tik Tok",
+        labelYoutube: "Siga-nos no Youtube",
       },
     },
     steps: {
@@ -424,7 +631,7 @@ const content = {
         </>
       ),
       img: imgSteps,
-      alt: 'Imagem ilustrativa da Seção Passo a Passo',
+      alt: "Imagem ilustrativa da Seção Passo a Passo",
       cards: {
         card1: {
           stepNumber: 1,
@@ -489,15 +696,15 @@ const content = {
       ctaButtonText: <>Falar com um especialista</>,
 
       ctaButtonAriaLabel:
-        'Botão para chamada de ação para contato pelo whatsapp',
+        "Botão para chamada de ação para contato pelo whatsapp",
     },
     blog: {
       miniTag: <>A_Definir</>,
       title: <>A_Definir</>,
-      subtitle: '',
+      subtitle: "",
       img: imgSteps,
-      labelCards: 'Ver mais',
-      label: 'Clique aqui para ver todas as matérias',
+      labelCards: "Ver mais",
+      label: "Clique aqui para ver todas as matérias",
       blogLink: <>A_Definir</>, //sem "https://"
     },
     parceria: {
@@ -511,28 +718,166 @@ const content = {
       ),
       images: [
         {
-          role: 'Business',
+          role: "Thamires Avena",
           img: logo1,
-          alt: 'Logomarca parceira',
-          description:
-            'Trabalho técnico, estratégico e extremamente responsável. A atuação preventiva trouxe mais segurança para nossas decisões e reduziu riscos relevantes.',
-          name: '— Sócio-diretor de empresa comercial',
+          alt: "Logomarca parceira",
+          description: (
+            <>
+              “Quero deixar aqui meu reconhecimento ao trabalho do Dr. Vladimir.
+              Em um momento delicado, ele conduziu tudo com muita seriedade,
+              estratégia e profissionalismo.
+              <br />
+              <br />
+              Sua atuação em gestão de crise e Compliance transmite segurança e
+              confiança, mostrando o quanto é preparado e comprometido com cada
+              detalhe. Recomendo seu trabalho pela competência, ética e
+              responsabilidade.”
+            </>
+          ),
+          name: "— Gestora Geral da GRAX LUBRIFICANTES",
         },
         {
-          role: 'Advocate Logo',
-          img: logo2,
-          alt: 'Logomarca parceira',
-          description:
-            'Atuação clara e objetiva em um momento delicado. A combinação entre advocacia e compliance fez toda a diferença na condução do caso.',
-          name: '— Advogada parceira',
+          role: "Leandro Guigov",
+          img: logo1,
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “Dr Vladimir é um profissional extremamente dedicado e conhecedor
+              exímio da Lei.
+              <br />
+              <br />
+              No momento mais delicado da história da minha empresa, esteve ao
+              nosso lado nos apoiando, direcionando, coordenando e conduzindo a
+              situação da melhor forma.
+              <br />
+              <br />
+              Um homem íntegro de caráter.”
+            </>
+          ),
+          name: "— CEO da Grax Lubrificantes",
         },
+
         {
-          role: 'Mechanical Engineer',
+          role: "Newton Lopes",
+          img: '',
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “Gostaríamos de registrar nosso reconhecimento ao Vladimir Vitti e
+              à VVJr Advocacia de Compliance pelo trabalho de excelência
+              realizado em parceria com a NMD Consultoria em SSMA em um cenário
+              extremamente sensível envolvendo um óbito em ambiente industrial
+              sua atuação foi marcada por estratégia, equilíbrio técnico,
+              segurança jurídica e condução ética em todas as etapas, garantindo
+              conformidade legal, interlocução adequada com as autoridades e
+              preservação da integridade institucional da empresa, demonstrando
+              elevada capacidade de análise, firmeza e prudência na construção
+              de uma estratégia jurídica estruturada e eficaz, razão pela qual
+              recomendamos com total confiança seu trabalho para organizações
+              que necessitam de gestão de crise com alto nível técnico e
+              responsabilidade.”
+            </>
+          ),
+          name: "— Perito em SSMA - NMD Consultoria em SSMA",
+        },
+
+        {
+          role: "Mirian Bazote",
           img: logo3,
-          alt: 'Logomarca parceira',
-          description:
-            'Ser orientado antes do problema se transformar em processo mudou completamente nossa forma de lidar com riscos jurídicos.',
-          name: '— Empresário do setor industrial',
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “Nossa parceria é pautada por rigor técnico, ética e alinhamento
+              estratégico. Trata-se de um profissional de atuação consistente,
+              com sólida formação em Compliance e Direito Constitucional, que
+              agrega método, visão sistêmica e segurança jurídica às decisões.
+              <br />
+              <br />O trabalho conjunto se desenvolve com clareza de papéis,
+              alto padrão de entrega e compromisso real com conformidade,
+              governança e responsabilidade institucional, o que fortalece
+              resultados e credibilidade perante clientes e stakeholders.”
+            </>
+          ),
+          name: "— CEO da Port Empresarial Facilities e Terceirização",
+        },
+
+        {
+          role: "Daiana Alves",
+          img: "",
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “Seu trabalho se destaca pelo atendimento personalizado, sempre
+              sensível às particularidades de cada situação.
+              <br />
+              <br />
+              Sua atuação humanizada traz acolhimento e profundidade ao que faz,
+              tornando sua contribuição verdadeiramente diferenciada.”
+            </>
+          ),
+          name: "— Consultora de RH",
+        },
+
+        {
+          role: "Vivian Teixeira",
+          img: logo4,
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “Seu trabalho se destaca pelo atendimento personalizado, sempre
+              sensível às particularidades de cada situação.
+              <br />
+              <br />
+              Sua atuação humanizada traz acolhimento e profundidade ao que faz,
+              tornando sua contribuição verdadeiramente diferenciada.”
+            </>
+          ),
+          name: "— Advogada sócia do Teixeira Oliveira Advogados",
+        },
+
+        {
+          role: "Silvana Crivelari",
+          img: logo5,
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “O Dr. Vladimir ministrou uma palestra alertando sobre os golpes
+              cibernéticos com muita propriedade, um tema de relevância na
+              atualidade e que soube tratar o assunto dando exemplos e dicas
+              excelentes.
+              <br />
+              <br />A categoria representada pelo Siemaco ABC e região adorou.
+              Parabéns dr👏🏼👏🏼👏🏼”
+            </>
+          ),
+          name: "— Diretora Jurídica do SIEMACO ABC",
+        },
+
+        {
+          role: "Larissa Nogueira",
+          img: logo6,
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “O Dr. Vladimir Vitti do VVJR formalizou todo o programa inicial
+              de compliance da Liciteduca.
+              <br />
+              <br />
+              A atuação foi próxima e sensível às necessidades específicas do
+              nosso campo de atuação, além de assertivo nas possibilidades de
+              mitigação de riscos e providências para atendimento da LGPD.
+              <br />
+              <br />
+              Ficamos satisfeitas com o resultado, que inclusive já está em uso
+              no nosso dia a dia.
+              <br />
+              <br />
+              Continuaremos a aprimorar nosso viés de compliance com a atuação
+              do VVJR pela confiança e credibilidade que todo o trabalho
+              executado nos conferiu.”
+            </>
+          ),
+          name: "— Sócia da Liciteduca",
         },
       ],
     },
@@ -584,7 +929,7 @@ const content = {
         },
       },
 
-      paragraph: 'Clique aqui caso tenha mais dúvidas',
+      paragraph: "Clique aqui caso tenha mais dúvidas",
     },
     // team: {
     //   miniTag: <>A_Definir</>,
@@ -854,13 +1199,13 @@ const content = {
     // },
     footer: {
       copyrightLine: ` ${currentYear} - ${infos.name} - Todos os direitos reservados`,
-      footerDivulgacaoText: 'Gostaria de ter um site como este? Clique aqui',
-      midSectionName: 'Até mais',
+      footerDivulgacaoText: "Gostaria de ter um site como este? Clique aqui",
+      midSectionName: "Até mais",
       footerText:
-        'Agradecemos sua visita! Esperamos que em breve você se torne nosso cliente e desfrute de todos os benefícios que oferecemos.',
-      footerSocialText: 'Siga a gente nas redes sociais:',
-      footerNavegacaoText: 'NAVEGAÇÃO',
-      desenvolvidoPor: 'Desenvolvido com excelência por Paper Street',
+        "Agradecemos sua visita! Esperamos que em breve você se torne nosso cliente e desfrute de todos os benefícios que oferecemos.",
+      footerSocialText: "Siga a gente nas redes sociais:",
+      footerNavegacaoText: "NAVEGAÇÃO",
+      desenvolvidoPor: "Desenvolvido com excelência por Paper Street",
       privacidade: (
         <div class="phone3:max-w-3xl mx-auto tablet1:px-6 text-gray-900 leading-relaxed font-secondFont">
           <h1 class="text-3xl font-bold mb-6">Política de Privacidade</h1>
@@ -886,7 +1231,7 @@ const content = {
 
           <ul class="list-disc ml-6 mb-6 space-y-2">
             <li>
-              <strong>Autoridade Nacional de Proteção de Dados (ANPD):</strong>{' '}
+              <strong>Autoridade Nacional de Proteção de Dados (ANPD):</strong>{" "}
               órgão responsável pela fiscalização e aplicação da LGPD.
             </li>
 
@@ -1093,9 +1438,9 @@ const content = {
         </div>
       ),
       pontos: {
-        ponto1: 'Profissionalismo',
-        ponto2: 'Experiência',
-        ponto3: 'Resultados',
+        ponto1: "Profissionalismo",
+        ponto2: "Experiência",
+        ponto3: "Resultados",
       },
     },
     // socios: {
@@ -1168,8 +1513,8 @@ const content = {
       year: currentYear,
       footerexpediente: infos.expediente,
       obsFooter: infos.obs,
-      footerNavegacaoText: 'NAVEGAÇÃO',
-      footerDivulgacaoText: 'Gostaria de ter um site como este? Clique aqui',
+      footerNavegacaoText: "NAVEGAÇÃO",
+      footerDivulgacaoText: "Gostaria de ter um site como este? Clique aqui",
     },
     svgs: {
       wpp: (
@@ -1185,11 +1530,11 @@ const content = {
       ),
     },
   },
-}
+};
 
 export const abstractions = {
   titleModal: <strong>{content.texts.about.title}</strong>,
   subtitleModal: <strong>{content.texts.about.subtitle}</strong>,
-}
+};
 
-export default content
+export default content;
