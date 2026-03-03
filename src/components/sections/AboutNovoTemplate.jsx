@@ -1,27 +1,27 @@
-import { Phone } from 'lucide-react'
-import React, { useState } from 'react'
-import { Dialog } from 'primereact/dialog'
-import content from '../../content/content'
-import SectionArea from '../sectionElements/SectionArea'
-import ButtonReflexo from '../interactives/ButtonReflexo'
-import { ArrowRight, CheckCircle2, X } from 'lucide-react'
+import { Linkedin, Phone } from "lucide-react";
+import React, { useState } from "react";
+import { Dialog } from "primereact/dialog";
+import content from "../../content/content";
+import SectionArea from "../sectionElements/SectionArea";
+import ButtonReflexo from "../interactives/ButtonReflexo";
+import { ArrowRight, CheckCircle2, X } from "lucide-react";
 import {
   ButtonsLps,
   defaultButtonThemes,
-} from '../../context/UseContextArchive'
-import { Button } from '../interactives/ButtonNovoTemplate'
-import SectionWrapper from '../sectionElements/SectionWrapper'
-import MotionDivDownToUp from '../animation/MotionDivDownToUp'
-import SectionHeaderNovo from '../sectionElements/SectionHeaderNovo'
+} from "../../context/UseContextArchive";
+import { Button } from "../interactives/ButtonNovoTemplate";
+import SectionWrapper from "../sectionElements/SectionWrapper";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import SectionHeaderNovo from "../sectionElements/SectionHeaderNovo";
 
 function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
-  const [visible, setVisible] = useState(false)
-  const [modalTitle, setModalTitle] = useState('')
+  const [visible, setVisible] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
 
   const onClick = () => {
-    setModalTitle(content.texts.about.title)
-    setVisible(true)
-  }
+    setModalTitle(content.texts.about.title);
+    setVisible(true);
+  };
 
   // Definindo classes conforme colorMode
   let backgroundMode,
@@ -32,55 +32,56 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
     buttonBg,
     textDestaque,
     image,
-    textOpacityModal
+    textOpacityModal;
 
   switch (colorMode) {
-    case 'light':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      textOpacityModal = 'text-corOutrosTextosPreto'
-      textDestaque = 'text-primaryDark'
-      cardBg = 'bg-white/10'
-      iconBg = 'bg-primaryDark/10 text-primaryDark'
-      buttonBg = 'bg-primaryDark'
-      image = ' border-[8px] border-white'
-      break
-    case 'dark':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosBranca'
-      textOpacity = 'text-corOutrosTextosBranca'
-      textOpacityModal = 'text-corOutrosTextosPreto'
-      textDestaque = 'text-primaryLight'
-      cardBg = 'bg-gray-800/20'
-      iconBg = 'bg-primaryLight/20 text-primaryLight'
-      buttonBg = 'bg-primaryLight'
-      image = ' border-[8px] border-borderImage'
-      break
-    case 'defaultDark':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      textOpacityModal = 'text-corOutrosPreto'
-      textDestaque = 'text-primaryDark'
-      cardBg = 'bg-white/10'
-      iconBg = 'bg-primaryDark/10 text-primaryDark'
-      buttonBg = 'bg-primaryDark'
-      image = ' border-[8px] border-white'
-      break
-    case 'defaultLight':
-      backgroundMode = 'bg-transparent'
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosBranca'
-      textOpacityModal = 'text-corOutrosPreto'
-      textDestaque = 'text-white'
-      cardBg = 'bg-white/10'
-      iconBg = 'bg-primaryDark/10 text-primaryDark'
-      buttonBg = 'bg-primaryDark'
-      image = ' border-[8px] border-[color-mix(in_srgb,var(--primaryDark),black_60%)]'
+    case "light":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      textOpacityModal = "text-corOutrosTextosPreto";
+      textDestaque = "text-primaryDark";
+      cardBg = "bg-white/10";
+      iconBg = "bg-primaryDark/10 text-primaryDark";
+      buttonBg = "bg-primaryDark";
+      image = " border-[8px] border-white";
+      break;
+    case "dark":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      textOpacityModal = "text-corOutrosTextosPreto";
+      textDestaque = "text-primaryLight";
+      cardBg = "bg-gray-800/20";
+      iconBg = "bg-primaryLight/20 text-primaryLight";
+      buttonBg = "bg-primaryLight";
+      image = " border-[8px] border-borderImage";
+      break;
+    case "defaultDark":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      textOpacityModal = "text-corOutrosPreto";
+      textDestaque = "text-primaryDark";
+      cardBg = "bg-white/10";
+      iconBg = "bg-primaryDark/10 text-primaryDark";
+      buttonBg = "bg-primaryDark";
+      image = " border-[8px] border-white";
+      break;
+    case "defaultLight":
+      backgroundMode = "bg-transparent";
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosBranca";
+      textOpacityModal = "text-corOutrosPreto";
+      textDestaque = "text-white";
+      cardBg = "bg-white/10";
+      iconBg = "bg-primaryDark/10 text-primaryDark";
+      buttonBg = "bg-primaryDark";
+      image =
+        " border-[8px] border-[color-mix(in_srgb,var(--primaryDark),black_60%)]";
   }
 
-  const { showGlobalButtonsLps } = ButtonsLps()
+  const { showGlobalButtonsLps } = ButtonsLps();
 
   return (
     <SectionArea
@@ -125,18 +126,51 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
                   </MotionDivDownToUp>
                 </div>
 
+                <MotionDivDownToUp>
+                  <p
+                    className={`font-secondFont font-light text-sm tablet1:text-lg leading-relaxed mt-14 ${textOpacity}`}
+                  >
+                    Advogado há 12 anos nas áreas do Direito Criminal,
+                    Administrativo e Civil/ Empresarial:
+                    <br />
+                    <br />
+                    • Atuante em Compliance e LGPD há 4 anos
+                    <br />
+                    • Certificações CPC-A (LEC/ FGV) e CEHCC (ESENI/ ARC)
+                    <br />
+                    • Bacharel em Direito pela USCS
+                    <br />
+                    • Pós-graduação em Ciências Criminais PUC
+                    <br />
+                    • Presidente da Comissão de Direito Constitucional e
+                    Secretário da Comissão de Compliance da OAB Santo André/SP
+                    <br />
+                  </p>
+
+                  <a
+                    href={content.texts.links.linkedin}
+                    target="_blank"
+                    className="flex gap-2 items-center w-fit font-secondFont mt-4 text-white py-2 px-4 bg-primaryLight rounded-full hover:scale-95 transition-all duration-500 cursor-pointer"
+                  >
+                    <span>
+                      <Linkedin width={18} />
+                    </span>
+                    LinkedIn
+                  </a>
+                </MotionDivDownToUp>
+
                 {/* Lista de benefícios */}
                 <MotionDivDownToUp>
                   {benefits && (
                     <div className="space-y-4">
                       {[
                         {
-                          title: 'Defesa estratégica desde a primeira hora',
-                          desc: 'Atuação imediata para proteger sua liberdade em cada decisão do caso.',
+                          title: "Defesa estratégica desde a primeira hora",
+                          desc: "Atuação imediata para proteger sua liberdade em cada decisão do caso.",
                         },
                         {
-                          title: 'Transparência Real ',
-                          desc: 'Você sabe exatamente o que pode acontecer, os riscos envolvidos e os próximos passos.',
+                          title: "Transparência Real ",
+                          desc: "Você sabe exatamente o que pode acontecer, os riscos envolvidos e os próximos passos.",
                         },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-4">
@@ -177,7 +211,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
                         link={content.texts.links.ctaWhatsapp}
                         label={content.texts.about.ctaButtonText}
                         bgClass={
-                          colorMode === 'defaultDark' || colorMode === 'light'
+                          colorMode === "defaultDark" || colorMode === "light"
                             ? defaultButtonThemes.light
                             : defaultButtonThemes.dark
                         }
@@ -200,7 +234,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
               <MotionDivDownToUp
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 className="relative w-full mt-4 tablet1:mt-8 desktop1:mt-0 m-auto overflow-visible mb-10 desktop1:mb-0"
               >
                 <div className="relative rounded-3xl shadow-2xl ring-1 ring-black/5">
@@ -262,11 +296,11 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
             }
             visible={visible}
             onHide={() => setVisible(false)}
-            style={{ width: '50vw' }}
+            style={{ width: "50vw" }}
             breakpoints={{
-              '4000px': '641px',
-              '1024px': '641px',
-              '641px': '85vw',
+              "4000px": "641px",
+              "1024px": "641px",
+              "641px": "85vw",
             }}
           >
             <div className="text-paragraph3 px-4 pb-4">
@@ -288,7 +322,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
                 link={content.texts.links.ctaWhatsapp}
                 label={content.texts.navbar.ctaButtonText}
                 bgClass={
-                  colorMode === 'defaultDark' || colorMode === 'defaultLight'
+                  colorMode === "defaultDark" || colorMode === "defaultLight"
                     ? defaultButtonThemes.light
                     : defaultButtonThemes.dark
                 }
@@ -299,7 +333,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
         </section>
       </SectionWrapper>
     </SectionArea>
-  )
+  );
 }
 
-export default AboutNovoTemplate
+export default AboutNovoTemplate;

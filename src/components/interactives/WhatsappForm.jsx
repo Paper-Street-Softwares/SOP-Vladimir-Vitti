@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import ButtonReflexo from "./ButtonReflexo";
 import content from "../../content/content";
+import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
 
 const WhatsappForm = () => {
   const [name, setName] = useState("");
@@ -182,6 +183,20 @@ Mensagem: ${message}
           </option>
         </select>
       </div>
+
+      {type === "Canal de Denúncias" && (
+        <MotionDivLeftToRight>
+          <div className="font-secondFont my-4 flex flex-col gap-2 p-4 border border-primaryLight rounded-md bg-gray-100">
+            <h1 className="text-primaryDark font-semibold">
+              Canal de Denúncias
+            </h1>
+            <p className="text-gray-500 text-sm">
+              Os campos nome, email e WhatsApp são opcionais para permitir
+              denúncias anônimas.
+            </p>
+          </div>
+        </MotionDivLeftToRight>
+      )}
 
       {/* Nome */}
       <div className="mb-4">

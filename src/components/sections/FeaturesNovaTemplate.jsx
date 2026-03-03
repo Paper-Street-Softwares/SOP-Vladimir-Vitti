@@ -10,8 +10,10 @@ import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 import SectionWrapper from "../sectionElements/SectionWrapper";
 import SectionHeaderNovo from "../sectionElements/SectionHeaderNovo";
 import { Dialog } from "primereact/dialog";
+import labels from "../../assets/imgs/features/labels.webp";
 
 import "primereact/resources/themes/lara-light-cyan/theme.css";
+import { ArrowRight } from "lucide-react";
 
 function FeaturesNovaTemplate({ colorMode, accordion }) {
   const [visible, setVisible] = useState(false);
@@ -86,17 +88,25 @@ function FeaturesNovaTemplate({ colorMode, accordion }) {
               secondPart={content.texts.features.SecondPart}
               subtitle={content.texts.features.subtitle}
               colorMode={colorMode}
+              className={`mb-2`}
             />
 
             <MotionDivDownToUp>
+              <img
+                src={labels}
+                alt={content.texts.features.alt}
+                className={`relative rounded-[2rem] w-full mb-3`}
+                width={621}
+                height={828}
+              />
               <div
-                className={`relative rounded-[1.5rem] overflow-hidden shadow-2xl ring-black/5 ${image}`}
+                className={`relative rounded-[1rem] overflow-hidden shadow-2xl ring-black/5 ${image}`}
               >
                 {" "}
                 <img
                   src={content.texts.features.imgFeatures}
                   alt={content.texts.features.alt}
-                  className={`relative rounded-[2rem] shadow-xl w-full m-auto scale-105 hover:scale-100 transition-transform duration-700`}
+                  className={`relative  shadow-xl w-full m-auto scale-105 hover:scale-100 transition-transform duration-700`}
                   width={621}
                   height={828}
                 />
@@ -127,6 +137,14 @@ function FeaturesNovaTemplate({ colorMode, accordion }) {
                     <h1 className={`font-bold text-md mb-2 text-white w-full`}>
                       {feature.title}
                     </h1>
+
+                    <p className="text-white/70 pt-2 text-md flex gap-2 items-center">
+                      {" "}
+                      <span>
+                        <ArrowRight width={18} />
+                      </span>
+                      Saiba mais
+                    </p>
                   </div>
                 </MotionDivDownToUp>
               ))}

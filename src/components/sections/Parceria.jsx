@@ -8,7 +8,8 @@ import content from "../../content/content";
 import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
 function Parceria({ colorMode }) {
-  const imgList = Object.values(content.texts.parceria.images);
+  const imgListClient = Object.values(content.texts.parceria.imagesClient);
+  const imgListPaceria = Object.values(content.texts.parceria.imagesParcerias);
 
   // Classes dinâmicas conforme colorMode
   let backgroundMode, text, textOpacity;
@@ -43,12 +44,12 @@ function Parceria({ colorMode }) {
   const responsiveOptions = [
     {
       breakpoint: "1400px",
-      numVisible: 3,
+      numVisible: 1,
       numScroll: 1,
     },
     {
       breakpoint: "1199px",
-      numVisible: 2,
+      numVisible: 1,
       numScroll: 1,
     },
     {
@@ -57,6 +58,23 @@ function Parceria({ colorMode }) {
       numScroll: 1,
     },
   ];
+
+  const clientTemplate = (item) => {
+    return (
+      <MotionDivDownToUp className="flex justify-center px-0 tablet2:px-2">
+        <ParceriaCard
+          role={item.role}
+          img={item.img}
+          alt={item.alt}
+          text={item.description}
+          name={item.name}
+          colorMode={colorMode}
+          textClass={text}
+          textOpacityClass={textOpacity}
+        />
+      </MotionDivDownToUp>
+    );
+  };
 
   const parceriaTemplate = (item) => {
     return (
@@ -78,26 +96,53 @@ function Parceria({ colorMode }) {
   return (
     <SectionArea className={backgroundMode} data-theme={colorMode}>
       <SectionWrapper>
-        <SectionHeaderNovo
-          miniTitle={content.texts.parceria.miniTag}
-          title={content.texts.parceria.title}
-          subtitle={content.texts.parceria.subtitle}
-          colorMode={colorMode}
-        />
-
-        <div className="max-w-[1200px] w-full">
-          {" "}
-          <Carousel
-            value={imgList}
-            itemTemplate={parceriaTemplate}
-            numVisible={3}
-            numScroll={1}
-            responsiveOptions={responsiveOptions}
-            circular
-            autoplayInterval={4000}
-            showIndicators
-            showNavigators
+        <div>
+          <SectionHeaderNovo
+            miniTitle={content.texts.parceria.miniTag}
+            title={content.texts.parceria.title}
+            subtitle={content.texts.parceria.subtitle}
+            colorMode={colorMode}
           />
+          <div className="flex flex-col desktop1:flex-row items-center gap-10">
+            <div className="">
+              <SectionHeaderNovo
+                title={"Nossos clientes"}
+                colorMode={colorMode}
+                className={`mb-2`}
+              />
+              <Carousel
+                value={imgListClient}
+                itemTemplate={clientTemplate}
+                numVisible={1}
+                numScroll={1}
+                responsiveOptions={responsiveOptions}
+                circular
+                autoplayInterval={4000}
+                showIndicators
+                showNavigators
+                className="max-w-[300px] phone3:max-w-[400px] tablet1:max-w-[450px] w-full mx-auto"
+              />
+            </div>
+            <div className="">
+              <SectionHeaderNovo
+                title={"Parcerias"}
+                colorMode={colorMode}
+                className={`mb-2`}
+              />
+              <Carousel
+                value={imgListPaceria}
+                itemTemplate={parceriaTemplate}
+                numVisible={1}
+                numScroll={1}
+                responsiveOptions={responsiveOptions}
+                circular
+                autoplayInterval={4000}
+                showIndicators
+                showNavigators
+                className="max-w-[300px] phone3:max-w-[400px] tablet1:max-w-[450px] w-full mx-auto"
+              />
+            </div>
+          </div>
         </div>
       </SectionWrapper>
     </SectionArea>

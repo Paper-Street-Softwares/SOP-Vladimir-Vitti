@@ -105,12 +105,12 @@ function HeroTemplateNovo({
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="space-y-8 order-2 lg:order-1 flex flex-col items-center"
             >
-              <div
+              {/* <div
                 className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border shadow-sm text-[8px] phone2:text-xs font-secondFont font-bold tracking-wide uppercase ${bgMinitag}`}
               >
                 <BriefcaseBusiness className="w-4 h-4" />
                 {content.texts.hero.miniTag}
-              </div>
+              </div> */}
 
               <h1
                 className={`text-[31px] phone2:text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] text-center ${text}`}
@@ -130,6 +130,7 @@ function HeroTemplateNovo({
 
               <div className="flex flex-col gap-4 pt-4">
                 <ButtonReflexo
+                  icon={content.texts.svgs.wpp}
                   link={content.texts.links.ctaWhatsapp}
                   label={content.texts.hero.ctaButtonText}
                   colorMode={colorMode}

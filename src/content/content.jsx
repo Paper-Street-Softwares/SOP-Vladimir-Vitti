@@ -127,20 +127,15 @@ const content = {
       ctaButtonTextResponsive: "Contato",
     },
     hero: {
-      miniTag: <>VLADIMIR VITTI JR. ADVOCACIA DE COMPLIANCE</>,
-      FirstPart: <span>O melhor da advocacia com a</span>,
+      miniTag: <></>,
+      FirstPart: <span></span>,
       Destaque: (
         <span className="destaque relative italic font-light">
-          inteligência
+          VLADIMIR VITTI JR.
         </span>
       ),
-      SecondPart: <span>do compliance</span>,
-      subtitle: (
-        <p>
-          Defesa jurídica e prevenção de riscos integradas para proteger sua
-          empresa antes que o problema apareça.
-        </p>
-      ),
+      SecondPart: <span> ADVOCACIA DE COMPLIANCE</span>,
+      subtitle: <p>O melhor da advocacia com a inteligência do compliance</p>,
       heroDefaultImage: heroDefaultImg, // img da pessoa mobile
       heroDefaulMobiletImg: heroDefaultMobileImg,
       bgHero: bgHero,
@@ -716,7 +711,7 @@ const content = {
           valorizam conformidade, estratégia e segurança jurídica.
         </>
       ),
-      images: [
+      imagesClient: [
         {
           role: "Thamires Avena",
           img: logo1,
@@ -736,30 +731,10 @@ const content = {
           ),
           name: "— Gestora Geral da GRAX LUBRIFICANTES",
         },
-        {
-          role: "Leandro Guigov",
-          img: logo1,
-          alt: "Foto do depoente",
-          description: (
-            <>
-              “Dr Vladimir é um profissional extremamente dedicado e conhecedor
-              exímio da Lei.
-              <br />
-              <br />
-              No momento mais delicado da história da minha empresa, esteve ao
-              nosso lado nos apoiando, direcionando, coordenando e conduzindo a
-              situação da melhor forma.
-              <br />
-              <br />
-              Um homem íntegro de caráter.”
-            </>
-          ),
-          name: "— CEO da Grax Lubrificantes",
-        },
 
         {
           role: "Newton Lopes",
-          img: '',
+          img: "",
           alt: "Foto do depoente",
           description: (
             <>
@@ -782,43 +757,6 @@ const content = {
         },
 
         {
-          role: "Mirian Bazote",
-          img: logo3,
-          alt: "Foto do depoente",
-          description: (
-            <>
-              “Nossa parceria é pautada por rigor técnico, ética e alinhamento
-              estratégico. Trata-se de um profissional de atuação consistente,
-              com sólida formação em Compliance e Direito Constitucional, que
-              agrega método, visão sistêmica e segurança jurídica às decisões.
-              <br />
-              <br />O trabalho conjunto se desenvolve com clareza de papéis,
-              alto padrão de entrega e compromisso real com conformidade,
-              governança e responsabilidade institucional, o que fortalece
-              resultados e credibilidade perante clientes e stakeholders.”
-            </>
-          ),
-          name: "— CEO da Port Empresarial Facilities e Terceirização",
-        },
-
-        {
-          role: "Daiana Alves",
-          img: "",
-          alt: "Foto do depoente",
-          description: (
-            <>
-              “Seu trabalho se destaca pelo atendimento personalizado, sempre
-              sensível às particularidades de cada situação.
-              <br />
-              <br />
-              Sua atuação humanizada traz acolhimento e profundidade ao que faz,
-              tornando sua contribuição verdadeiramente diferenciada.”
-            </>
-          ),
-          name: "— Consultora de RH",
-        },
-
-        {
           role: "Vivian Teixeira",
           img: logo4,
           alt: "Foto do depoente",
@@ -833,24 +771,6 @@ const content = {
             </>
           ),
           name: "— Advogada sócia do Teixeira Oliveira Advogados",
-        },
-
-        {
-          role: "Silvana Crivelari",
-          img: logo5,
-          alt: "Foto do depoente",
-          description: (
-            <>
-              “O Dr. Vladimir ministrou uma palestra alertando sobre os golpes
-              cibernéticos com muita propriedade, um tema de relevância na
-              atualidade e que soube tratar o assunto dando exemplos e dicas
-              excelentes.
-              <br />
-              <br />A categoria representada pelo Siemaco ABC e região adorou.
-              Parabéns dr👏🏼👏🏼👏🏼”
-            </>
-          ),
-          name: "— Diretora Jurídica do SIEMACO ABC",
         },
 
         {
@@ -878,6 +798,66 @@ const content = {
             </>
           ),
           name: "— Sócia da Liciteduca",
+        },
+      ],
+      imagesParcerias: [
+        {
+          role: "Leandro Guigov",
+          img: logo1,
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “Dr Vladimir é um profissional extremamente dedicado e conhecedor
+              exímio da Lei.
+              <br />
+              <br />
+              No momento mais delicado da história da minha empresa, esteve ao
+              nosso lado nos apoiando, direcionando, coordenando e conduzindo a
+              situação da melhor forma.
+              <br />
+              <br />
+              Um homem íntegro de caráter.”
+            </>
+          ),
+          name: "— CEO da Grax Lubrificantes",
+        },
+
+        {
+          role: "Mirian Bazote",
+          img: logo3,
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “Nossa parceria é pautada por rigor técnico, ética e alinhamento
+              estratégico. Trata-se de um profissional de atuação consistente,
+              com sólida formação em Compliance e Direito Constitucional, que
+              agrega método, visão sistêmica e segurança jurídica às decisões.
+              <br />
+              <br />O trabalho conjunto se desenvolve com clareza de papéis,
+              alto padrão de entrega e compromisso real com conformidade,
+              governança e responsabilidade institucional, o que fortalece
+              resultados e credibilidade perante clientes e stakeholders.”
+            </>
+          ),
+          name: "— CEO da Port Empresarial Facilities e Terceirização",
+        },
+
+        {
+          role: "Silvana Crivelari",
+          img: logo5,
+          alt: "Foto do depoente",
+          description: (
+            <>
+              “O Dr. Vladimir ministrou uma palestra alertando sobre os golpes
+              cibernéticos com muita propriedade, um tema de relevância na
+              atualidade e que soube tratar o assunto dando exemplos e dicas
+              excelentes.
+              <br />
+              <br />A categoria representada pelo Siemaco ABC e região adorou.
+              Parabéns dr👏🏼👏🏼👏🏼”
+            </>
+          ),
+          name: "— Diretora Jurídica do SIEMACO ABC",
         },
       ],
     },

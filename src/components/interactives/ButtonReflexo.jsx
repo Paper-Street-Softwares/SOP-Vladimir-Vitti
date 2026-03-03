@@ -1,7 +1,7 @@
-import { useColorMode } from '../../context/UseContextArchive'
-import { whatsAppThemes } from '../../context/UseContextArchive'
-import { alertTheme } from '../../context/UseContextArchive'
-import { defaultButtonThemes } from '../../context/UseContextArchive'
+import { useColorMode } from "../../context/UseContextArchive";
+import { whatsAppThemes } from "../../context/UseContextArchive";
+import { alertTheme } from "../../context/UseContextArchive";
+import { defaultButtonThemes } from "../../context/UseContextArchive";
 
 export default function ButtonReflexo({
   link,
@@ -13,45 +13,46 @@ export default function ButtonReflexo({
   bgClass,
   shineClass,
   id,
-  variant = 'primary',
+  variant = "primary",
   ...props
 }) {
-  const { colorMode, whatsAppColor, showGlobalButton } = useColorMode()
-  const isLigar = id === 'ligar'
-  const effectiveWhatsAppColor = isLigar ? false : whatsAppColor
+  const { colorMode, whatsAppColor, showGlobalButton } = useColorMode();
+  const isLigar = id === "ligar";
+  const effectiveWhatsAppColor = isLigar ? false : whatsAppColor;
 
   const shadowClass =
-    variant === 'secondary'
-      ? 'shadow-none'
+    variant === "secondary"
+      ? "shadow-none"
       : isLigar
-        ? 'shadow-red-500/30'
+        ? "shadow-red-500/30"
         : effectiveWhatsAppColor
-          ? 'shadow-wppLight/30'
-          : colorMode === 'dark'
-            ? 'shadow-primaryLight/20'
-            : 'shadow-primaryDark/20'
+          ? "shadow-wppLight/30"
+          : colorMode === "dark"
+            ? "shadow-primaryLight/20"
+            : "shadow-primaryDark/20";
 
   const shineThemes = {
-    light: 'bg-white/40',
-    dark: 'bg-white/40',
-    default: 'bg-white/40',
-  }
+    light: "bg-white/40",
+    dark: "bg-white/40",
+    defaultDark: "bg-white/40",
+    defaultLight: "bg-white/40",
+  };
 
   const primaryColors = isLigar
     ? alertTheme[colorMode]
     : effectiveWhatsAppColor
       ? whatsAppThemes[colorMode]
-      : (bgClass ?? defaultButtonThemes[colorMode])
+      : (bgClass ?? defaultButtonThemes[colorMode]);
 
-  const secondaryColors = bgClass ?? defaultButtonThemes[colorMode]
+  const secondaryColors = bgClass ?? defaultButtonThemes[colorMode];
 
-  const colors = variant === 'secondary' ? secondaryColors : primaryColors
+  const colors = variant === "secondary" ? secondaryColors : primaryColors;
 
-  const shineColor = shineClass ?? shineThemes[colorMode]
-  const spacing = padding || 'px-6 py-3'
+  const shineColor = shineClass ?? shineThemes[colorMode];
+  const spacing = padding || "px-6 py-3";
 
-  if (id === 'ligar' && !showGlobalButton) {
-    return null
+  if (id === "ligar" && !showGlobalButton) {
+    return null;
   }
 
   return (
@@ -87,5 +88,5 @@ export default function ButtonReflexo({
         {label}
       </span>
     </a>
-  )
+  );
 }
