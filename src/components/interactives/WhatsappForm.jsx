@@ -7,6 +7,7 @@ import {
   Phone,
   Mail,
   FileText,
+  X,
   DollarSign,
   ListChecks,
   Calendar,
@@ -17,6 +18,7 @@ import {
 import ButtonReflexo from "./ButtonReflexo";
 import content from "../../content/content";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
+import { Dialog } from "primereact/dialog";
 
 const WhatsappForm = () => {
   const [name, setName] = useState("");
@@ -32,6 +34,12 @@ const WhatsappForm = () => {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const openDialog = async () => {
+    await import("primereact/resources/themes/lara-light-cyan/theme.css");
+    setVisible(true);
+  };
 
   const sendToEmail = () => {
     setIsSubmitting(true);
@@ -203,7 +211,11 @@ Mensagem: ${message}
         <label className="block font-medium mb-1">
           <p className="flex items-center text-[14px] gap-2">
             <User width={18} /> Nome{" "}
-            <span className="text-primaryLight">*</span>
+            <span
+              className={`${type === "Canal de Denúncias" ? "hidden" : "text-primaryLight"}`}
+            >
+              *
+            </span>
           </p>
         </label>
         <input
@@ -220,7 +232,11 @@ Mensagem: ${message}
         <label className="block font-medium mb-1">
           <p className="flex items-center text-[14px] gap-2">
             <Mail width={18} /> Email{" "}
-            <span className="text-primaryLight">*</span>
+            <span
+              className={`${type === "Canal de Denúncias" ? "hidden" : "text-primaryLight"}`}
+            >
+              *
+            </span>
           </p>{" "}
         </label>
         <input
@@ -237,7 +253,11 @@ Mensagem: ${message}
         <label className="block font-medium mb-1">
           <p className="flex items-center text-[14px] gap-2">
             <Phone width={18} /> WhatsApp{" "}
-            <span className="text-primaryLight">*</span>
+            <span
+              className={`${type === "Canal de Denúncias" ? "hidden" : "text-primaryLight"}`}
+            >
+              *
+            </span>
           </p>{" "}
         </label>
         <input
@@ -254,7 +274,11 @@ Mensagem: ${message}
         <label className="block font-medium mb-1">
           <p className="flex items-center text-[14px] gap-2">
             <MessageSquare width={18} /> Mensagem{" "}
-            <span className="text-primaryLight">*</span>
+            <span
+              className={`${type === "Canal de Denúncias" ? "hidden" : "text-primaryLight"}`}
+            >
+              *
+            </span>
           </p>{" "}
           {errors.message && (
             <p className="text-red-500 mt-2">{errors.message}</p>
@@ -293,10 +317,28 @@ Mensagem: ${message}
 
       <p className="text-xs text-center text-gray-400 mt-4">
         Ao enviar este formulário, você concorda com nossa{" "}
-        <span className="text-primaryLight cursor-pointer">
-          Política de Privacidade
-        </span>
+        <button
+          onClick={openDialog}
+          aria-label="Abre um Modal com os termos da Política de privacidade"
+          className="underline cursor-pointer text-primaryDark outline-none"
+        >
+          Políticas de privacidade
+        </button>
       </p>
+      <Dialog
+        className="font-secondFont"
+        closeIcon={<X size={20} />}
+        visible={visible}
+        onHide={() => setVisible(false)}
+        style={{ width: "50vw" }}
+        breakpoints={{
+          "4000px": "641px",
+          "1024px": "641px",
+          "641px": "85vw",
+        }}
+      >
+        {content.texts.footer.privacidade}
+      </Dialog>
     </div>
   );
 };
