@@ -292,8 +292,8 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
               )}
             </div>
 
-            <div className="flex flex-wrap mx-auto gap-8 justify-center desktop1:gap-2 desktop1:justify-between mt-10">
-              <div className="max-w-[350px] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
+            <div className="flex flex-wrap mx-auto gap-8 justify-center desktop1:gap-2 desktop1:justify-between desktop1:mt-4 desktop2:mt-8">
+              <div className="max-w-[90%] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
                 <span>
                   <Target className="size-[30px] text-white" />
                 </span>
@@ -307,9 +307,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
                 </p>
               </div>
 
-              <hr className="w-full max-w-[350px] desktop1:hidden" />
-
-              <div className="max-w-[350px] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
+              <div className="max-w-[90%] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
                 <span>
                   <Eye className="size-[30px] text-white" />
                 </span>
@@ -322,9 +320,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
                 </p>
               </div>
 
-              <hr className="w-full max-w-[350px] desktop1:hidden" />
-
-              <div className="max-w-[350px] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
+              <div className="max-w-[90%] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
                 <span>
                   <Gem className="size-[30px] text-white" />
                 </span>
