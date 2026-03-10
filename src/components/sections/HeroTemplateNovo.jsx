@@ -32,7 +32,7 @@ function HeroTemplateNovo({
       textOpacity = "text-corOutrosTextosPreto";
       textDestaque = "text-primaryDark";
       bgMinitag = "bg-transparent border-primaryDark text-primaryDark";
-      image = " border-[8px]";
+      image = "border-[8px]";
       bgAlertHero = "bg-white";
       borderColor = "bg-white";
       break;
@@ -44,7 +44,7 @@ function HeroTemplateNovo({
       textOpacity = "text-corOutrosTextosBranca";
       textDestaque = "text-primaryLight";
       bgMinitag = "bg-transparent border-primaryLight text-primaryLight";
-      image = " border-[8px]";
+      image = "border-[8px]";
       bgAlertHero = "bg-black text-white/60";
       borderColor = "border-borderImage";
       break;
@@ -56,7 +56,7 @@ function HeroTemplateNovo({
       textOpacity = "text-corOutrosTextosBranca";
       textDestaque = "text-primaryLight";
       bgMinitag = "bg-transparent border-primaryLight text-primaryLight";
-      image = " border-[8px]";
+      image = "border-[8px]";
       bgAlertHero = "bg-black text-white/60";
       borderColor = "border-primaryDark";
       break;
@@ -66,9 +66,9 @@ function HeroTemplateNovo({
       bgFaixaHero = "bg-black/40";
       text = "text-corTitulosBranca";
       textOpacity = "text-corOutrosTextosBranca";
-      textDestaque = "text-primaryDark";
+      textDestaque = "text-white";
       bgMinitag = "bg-transparent border-white text-white";
-      image = " border-[8px]";
+      image = "border-[8px]";
       bgAlertHero = "bg-white";
       borderColor = "bg-white";
       break;
@@ -94,7 +94,7 @@ function HeroTemplateNovo({
       <section className="relative w-full pt-[130px] phone2:pt-[140px] phone3:pt-[160px] tablet1:pt-[164px] tablet2:pt-[177px] desktop1:pt-[195px] desktop2:pt-[235px] pb-[64px] desktop1:pb-[96px] flex items-center justify-center overflow-hidden font-mainFont">
         {/* overlay escuro */}
         <div className={`absolute inset-0 z-0 ${bgFaixaHero}`} />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-t to-darkOpacity/30 from-black/70" />
 
         <SectionWrapper>
           <div className="relative z-10 grid gap-4 phone2:gap-6 lg:gap-20 items-center w-full">
@@ -113,7 +113,7 @@ function HeroTemplateNovo({
               </div> */}
 
               <h1
-                className={`text-[31px] phone2:text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] text-center ${text}`}
+                className={`text-[31px] phone2:text-4xl md:text-5xl lg:text-7xl leading-[1.1] text-center ${text}`}
               >
                 {content.texts.hero.FirstPart}{" "}
                 <span className={`${textDestaque}`}>

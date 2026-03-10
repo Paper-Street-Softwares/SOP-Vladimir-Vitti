@@ -1,4 +1,12 @@
-import { Linkedin, Phone } from "lucide-react";
+import {
+  Diamond,
+  Eye,
+  Focus,
+  Gem,
+  Linkedin,
+  Phone,
+  Target,
+} from "lucide-react";
 import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import content from "../../content/content";
@@ -282,6 +290,78 @@ function AboutNovoTemplate({ ButtonModal, colorMode, benefits }) {
                   />
                 </div>
               )}
+            </div>
+
+            <div className="flex flex-wrap mx-auto gap-8 justify-center desktop1:gap-2 desktop1:justify-between mt-10">
+              <div className="max-w-[350px] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
+                <span>
+                  <Target className="size-[30px] text-white" />
+                </span>
+                <h1 className={`text-white`}>Missão</h1>
+                <p className="text-[12px] text-corOutrosTextosBranca opacity-80">
+                  Usar o conhecimento prático em advocacia criminal e
+                  administrativa para promover a integridade ética e garantir a
+                  segurança jurídica às pessoas e aos empreendedores em todo o
+                  cenário brasileiro, levando a expertise de grandes empresas
+                  adaptadas aos pequenos negócios.
+                </p>
+              </div>
+
+              <hr className="w-full max-w-[350px] desktop1:hidden" />
+
+              <div className="max-w-[350px] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
+                <span>
+                  <Eye className="size-[30px] text-white" />
+                </span>
+                <h1 className={`text-white`}>Visão</h1>
+                <p className="text-[12px] text-corOutrosTextosBranca opacity-80">
+                  Ser o principal agente de disseminação da cultura de
+                  conformidade e integridade para micro e pequenos empresários
+                  na Grande São Paulo até 2030, construindo um ambiente de
+                  negócios mais justo e seguro.
+                </p>
+              </div>
+
+              <hr className="w-full max-w-[350px] desktop1:hidden" />
+
+              <div className="max-w-[350px] desktop1:max-w-[32%] font-secondFont flex flex-col text-start items-start gap-2 bg-primaryDark p-4 rounded-lg h-fit">
+                <span>
+                  <Gem className="size-[30px] text-white" />
+                </span>
+                <h1 className={`text-white`}>Valores</h1>
+                <p className="text-[12px] text-corOutrosTextosBranca opacity-80">
+                  Todas nossas ações são guiadas por princípios inegociáveis:
+                  <br />
+                  <br />
+                  <div className="text-[12px] flex ">
+                    <ul className="flex flex-col gap-1 text-start">
+                      <li>
+                        • Ética: fazer o certo mesmo quando não tiver alguém
+                        olhando.
+                      </li>
+                      <li>
+                        • Transparência: Clareza total em processos e
+                        comunicações.
+                      </li>
+                      <li>
+                        • Lealdade: Compromisso com os interesses do cliente.
+                      </li>
+                      <li>
+                        • Adaptabilidade (Ju 柔): Flexibilidade para encontrar a
+                        solução de compliance mais adequada ao seu negócio.
+                      </li>
+                      <li>
+                        • Eficiência (Seiryoku Zen'yo 精力善用): Máxima entrega
+                        com mínimo desperdício de recursos.
+                      </li>
+                      <li>
+                        • Prosperidade Mútua (Jita Kyoei 自他共栄): Crescimento
+                        junto com clientes e parceiros.
+                      </li>
+                    </ul>
+                  </div>
+                </p>
+              </div>
             </div>
           </div>
 
