@@ -36,10 +36,10 @@ const WhatsappForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  const openDialog = async () => {
-    await import("primereact/resources/themes/lara-light-cyan/theme.css");
-    setVisible(true);
-  };
+  // const openDialog = async () => {
+  //   await import("primereact/resources/themes/lara-light-cyan/theme.css");
+  //   setVisible(true);
+  // };
 
   const sendToEmail = () => {
     setIsSubmitting(true);
@@ -317,15 +317,17 @@ Mensagem: ${message}
 
       <p className="text-xs text-center text-gray-400 mt-4">
         Ao enviar este formulário, você concorda com nossa{" "}
-        <button
-          onClick={openDialog}
-          aria-label="Abre um Modal com os termos da Política de privacidade"
+        <a
+          href="https://drive.google.com/file/d/1xHmbFNleY0uBwEBI7IjwUyEkEVjdTeAj/view?usp=sharing"
+          aria-label="Direciona para um pdf com os termos da Política de privacidade"
           className="underline cursor-pointer text-primaryDark outline-none"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Políticas de privacidade
-        </button>
+        </a>
       </p>
-      <Dialog
+      {/* <Dialog
         className="font-secondFont"
         closeIcon={<X size={20} />}
         visible={visible}
@@ -338,7 +340,7 @@ Mensagem: ${message}
         }}
       >
         {content.texts.footer.privacidade}
-      </Dialog>
+      </Dialog> */}
     </div>
   );
 };

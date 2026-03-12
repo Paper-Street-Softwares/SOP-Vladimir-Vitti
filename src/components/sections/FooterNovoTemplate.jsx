@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
-import { Dialog } from 'primereact/dialog'
-import { X, MapPin, Phone, Mail } from 'lucide-react'
-import SectionArea from '../sectionElements/SectionArea'
-import SectionWrapper from '../sectionElements/SectionWrapper'
-import { Link } from 'react-scroll'
-import FooterSocialIcons from '../sectionElements/footer/FooterSocialIcons'
-import content from '../../content/content'
+import React, { useState } from "react";
+import { Dialog } from "primereact/dialog";
+import {
+  X,
+  MapPin,
+  Phone,
+  Mail,
+  Link2,
+  Link2Icon,
+  ExternalLink,
+} from "lucide-react";
+import SectionArea from "../sectionElements/SectionArea";
+import SectionWrapper from "../sectionElements/SectionWrapper";
+import { Link } from "react-scroll";
+import FooterSocialIcons from "../sectionElements/footer/FooterSocialIcons";
+import content from "../../content/content";
 
 function FooterNovoTemplate({
   mapa,
@@ -19,51 +27,53 @@ function FooterNovoTemplate({
   fraseFooter,
   obs,
 }) {
-  const labels = content.texts.navbar.menuItems
-  const ids = content.texts.navbar.menuId
-  const [visible, setVisible] = useState(false)
+  const labels = content.texts.navbar.menuItems;
+  const ids = content.texts.navbar.menuId;
+  const [visible, setVisible] = useState(false);
 
   const openDialog = async () => {
-    await import('primereact/resources/themes/lara-light-cyan/theme.css')
-    setVisible(true)
-  }
+    await import("primereact/resources/themes/lara-light-cyan/theme.css");
+    setVisible(true);
+  };
 
-  const grid = mapa ? 'lg:grid-cols-4' : 'lg:grid-cols-3'
+  const grid = mapa ? "lg:grid-cols-4" : "lg:grid-cols-3";
 
   // Classes dinâmicas de acordo com colorMode
-  let text, textOpacity, iconColor, backgroundMode, hoverLinks
+  let text, textOpacity, iconColor, backgroundMode, hoverLinks;
   switch (colorMode) {
-    case 'light':
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      iconColor = 'text-primaryDark/60'
-      backgroundMode = 'bg-transparent'
-      hoverLinks = ' bg-gradient-to-r from-primaryDark to-primaryDark '
+    case "light":
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      iconColor = "text-primaryDark/60";
+      backgroundMode = "bg-transparent";
+      hoverLinks = " bg-gradient-to-r from-primaryDark to-primaryDark ";
 
-      break
-    case 'dark':
-      text = 'text-corTitulosBranca'
-      textOpacity = 'text-corOutrosTextosBranca'
-      iconColor = 'text-primaryLight/80'
-      backgroundMode = 'bg-transparent'
-      hoverLinks = ' bg-gradient-to-r from-primaryLight to-primaryLight '
-      break
-    case 'defaultDark':
-      text = 'text-corTitulosBranca'
-      textOpacity = 'text-corOutrosTextosBranca'
-      iconColor = 'text-primaryLight'
-      backgroundMode = 'bg-transparent'
-      hoverLinks = ' bg-gradient-to-r from-white to-white '
+      break;
+    case "dark":
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      iconColor = "text-primaryLight/80";
+      backgroundMode = "bg-transparent";
+      hoverLinks = " bg-gradient-to-r from-primaryLight to-primaryLight ";
+      break;
+    case "defaultDark":
+      text = "text-corTitulosBranca";
+      textOpacity = "text-corOutrosTextosBranca";
+      iconColor = "text-primaryLight";
+      backgroundMode = "bg-transparent";
+      hoverLinks = " bg-gradient-to-r from-white to-white ";
 
-      break
+      break;
 
-    case 'defaultLight':
-      text = 'text-corTitulosPreto'
-      textOpacity = 'text-corOutrosTextosPreto'
-      iconColor = 'text-primaryDark/60'
-      backgroundMode = 'bg-transparent'
-      hoverLinks = ' bg-gradient-to-r from-primaryDark to-primaryDark '
+    case "defaultLight":
+      text = "text-corTitulosPreto";
+      textOpacity = "text-corOutrosTextosPreto";
+      iconColor = "text-primaryDark/60";
+      backgroundMode = "bg-transparent";
+      hoverLinks = " bg-gradient-to-r from-primaryDark to-primaryDark ";
   }
+
+  const linksFooter = Object.values(content.texts.footer.linksExternos);
 
   return (
     <SectionArea className={`${backgroundMode} pb-4`} paddingbot={false}>
@@ -84,7 +94,7 @@ function FooterNovoTemplate({
                   <img
                     src={content.texts.navbar.logo.img}
                     alt={content.texts.navbar.logo.alt}
-                    className="w-[50%]"
+                    className="w-[25%]"
                     width={187}
                     height={119}
                   />
@@ -136,7 +146,7 @@ function FooterNovoTemplate({
                   </h1>
                   <ul className="space-y-4 font-secondFont font-light">
                     {labels.map((item, index) => {
-                      const id = ids[index]
+                      const id = ids[index];
 
                       return (
                         <li key={id}>
@@ -147,23 +157,23 @@ function FooterNovoTemplate({
                             data-track={id}
                             className={`cursor-pointer bg-gradient-to-r ${hoverLinks} pb-1 bg-[length:0%_2px] bg-no-repeat bg-left-bottom transition-[background-size] duration-300 hover:bg-[length:100%_2px] ${textOpacity} font-secondFont`}
                             onClick={(e) => {
-                              e.preventDefault()
-                              const el = document.getElementById(id)
+                              e.preventDefault();
+                              const el = document.getElementById(id);
                               if (el) {
-                                const yOffset = -90
+                                const yOffset = -90;
                                 const y =
                                   el.getBoundingClientRect().top +
                                   window.scrollY +
-                                  yOffset
+                                  yOffset;
 
-                                window.scrollTo({ top: y, behavior: 'smooth' })
+                                window.scrollTo({ top: y, behavior: "smooth" });
                               }
                             }}
                           >
                             {item}
                           </a>
                         </li>
-                      )
+                      );
                     })}
                   </ul>
                 </div>
@@ -218,6 +228,24 @@ function FooterNovoTemplate({
                         </span>
                       </li>
                     )}
+
+                    <ul className="flex flex-col space-y-2 text-sm font-light">
+                      {linksFooter.map((item, index) => (
+                        <a
+                          href={item.link}
+                          className="flex gap-3 items-center cursor-pointer font-secondFont underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span>
+                            <ExternalLink
+                              className={`${iconColor} w-5 h-5 shrink-0`}
+                            />
+                          </span>{" "}
+                          {item.label}
+                        </a>
+                      ))}
+                    </ul>
                   </ul>
                 </div>
               </div>
@@ -241,7 +269,7 @@ function FooterNovoTemplate({
 
             <hr
               className={`pb-6 border-t ${text} ${
-                colorMode === 'light' ? 'opacity-90' : 'opacity-20'
+                colorMode === "light" ? "opacity-90" : "opacity-20"
               } w-full`}
             />
 
@@ -258,8 +286,8 @@ function FooterNovoTemplate({
                   className="underline cursor-pointer"
                 >
                   Políticas de privacidade
-                </button>{' '}
-                - Desenvolvido com excelência por{' '}
+                </button>{" "}
+                - Desenvolvido com excelência por{" "}
                 <a
                   target="_blank"
                   href="https://paperstreet.com.br"
@@ -285,11 +313,11 @@ function FooterNovoTemplate({
             closeIcon={<X size={20} />}
             visible={visible}
             onHide={() => setVisible(false)}
-            style={{ width: '50vw' }}
+            style={{ width: "50vw" }}
             breakpoints={{
-              '4000px': '641px',
-              '1024px': '641px',
-              '641px': '85vw',
+              "4000px": "641px",
+              "1024px": "641px",
+              "641px": "85vw",
             }}
           >
             {content.texts.footer.privacidade}
@@ -297,7 +325,7 @@ function FooterNovoTemplate({
         </footer>
       </SectionWrapper>
     </SectionArea>
-  )
+  );
 }
 
-export default FooterNovoTemplate
+export default FooterNovoTemplate;

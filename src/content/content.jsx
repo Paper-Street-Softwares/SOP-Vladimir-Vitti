@@ -713,6 +713,51 @@ const content = {
       ),
       imagesClient: [
         {
+          role: "Larissa Nogueira",
+          img: logo6,
+          alt: "Imagem de LogoMarca",
+          description: (
+            <>
+              “O Dr. Vladimir Vitti do VVRJ formalizou todo o programa inicial
+              de compliance da Liciteduca.
+              <br />
+              <br />
+              A atuação foi próxima e sensível às necessidades específicas do
+              nosso campo de atuação, além de assertivo nas possibilidades de
+              mitigação de riscos e providências para atendimento da LGPD.
+              <br />
+              <br />
+              Ficamos satisfeitas com o resultado, que inclusive já está em uso
+              no nosso dia a dia.
+              <br />
+              <br />
+              Continuaremos a aprimorar nosso viés de compliance com a atuação
+              do VVJR pela confiança e credibilidade que todo o trabalho
+              executado nos conferiu.”
+            </>
+          ),
+          name: "— Sócia da LICITEDUCA",
+        },
+        {
+          role: "Leandro Guigov",
+          img: logo1,
+          alt: "Imagem de LogoMarca",
+          description: (
+            <>
+              “Dr Vladimir é um profissional extremamente dedicado e conhecedor
+              exímio da Lei.
+              <br />
+              <br />
+              No momento mais delicado da história da minha empresa, esteve ao
+              nosso lado nos apoiando, direcionando, coordenando e conduzindo a
+              situação da melhor forma.
+              <br />
+              Um homem íntegro de caráter.”
+            </>
+          ),
+          name: "— CEO da GRAX LUBRIFICANTES",
+        },
+        {
           role: "Thamires Avena",
           img: logo1,
           alt: "Logomarca parceira",
@@ -731,11 +776,29 @@ const content = {
           ),
           name: "— Gestora Geral da GRAX LUBRIFICANTES",
         },
-
+        {
+          role: "Silvana Crivelari",
+          img: logo5,
+          alt: "Imagem de LogoMarca",
+          description: (
+            <>
+              “O Dr. Vladimir ministrou uma palestra alertando sobre os golpes
+              cibernéticos com muita propriedade, um tema de relevância na
+              atualidade e que soube tratar o assunto dando exemplos e dicas
+              excelentes.
+              <br />
+              <br />A categoria representada pelo Siemaco Abc e região adorou.
+              Parabéns dr👏🏼👏🏼👏🏼”
+            </>
+          ),
+          name: "— Diretora Jurídica do SIEMACO ABC",
+        },
+      ],
+      imagesParcerias: [
         {
           role: "Newton Lopes",
           img: "",
-          alt: "Foto do depoente",
+          alt: "Imagem de LogoMarca",
           description: (
             <>
               “Gostaríamos de registrar nosso reconhecimento ao Vladimir Vitti e
@@ -755,77 +818,10 @@ const content = {
           ),
           name: "— Perito em SSMA - NMD Consultoria em SSMA",
         },
-
-        {
-          role: "Vivian Teixeira",
-          img: logo4,
-          alt: "Foto do depoente",
-          description: (
-            <>
-              “Seu trabalho se destaca pelo atendimento personalizado, sempre
-              sensível às particularidades de cada situação.
-              <br />
-              <br />
-              Sua atuação humanizada traz acolhimento e profundidade ao que faz,
-              tornando sua contribuição verdadeiramente diferenciada.”
-            </>
-          ),
-          name: "— Advogada sócia do Teixeira Oliveira Advogados",
-        },
-
-        {
-          role: "Larissa Nogueira",
-          img: logo6,
-          alt: "Foto do depoente",
-          description: (
-            <>
-              “O Dr. Vladimir Vitti do VVJR formalizou todo o programa inicial
-              de compliance da Liciteduca.
-              <br />
-              <br />
-              A atuação foi próxima e sensível às necessidades específicas do
-              nosso campo de atuação, além de assertivo nas possibilidades de
-              mitigação de riscos e providências para atendimento da LGPD.
-              <br />
-              <br />
-              Ficamos satisfeitas com o resultado, que inclusive já está em uso
-              no nosso dia a dia.
-              <br />
-              <br />
-              Continuaremos a aprimorar nosso viés de compliance com a atuação
-              do VVJR pela confiança e credibilidade que todo o trabalho
-              executado nos conferiu.”
-            </>
-          ),
-          name: "— Sócia da Liciteduca",
-        },
-      ],
-      imagesParcerias: [
-        {
-          role: "Leandro Guigov",
-          img: logo1,
-          alt: "Foto do depoente",
-          description: (
-            <>
-              “Dr Vladimir é um profissional extremamente dedicado e conhecedor
-              exímio da Lei.
-              <br />
-              <br />
-              No momento mais delicado da história da minha empresa, esteve ao
-              nosso lado nos apoiando, direcionando, coordenando e conduzindo a
-              situação da melhor forma.
-              <br />
-              <br />
-              Um homem íntegro de caráter.”
-            </>
-          ),
-          name: "— CEO da Grax Lubrificantes",
-        },
-
         {
           role: "Mirian Bazote",
           img: logo3,
-          alt: "Foto do depoente",
+          alt: "Imagem de LogoMarca",
           description: (
             <>
               “Nossa parceria é pautada por rigor técnico, ética e alinhamento
@@ -839,25 +835,56 @@ const content = {
               resultados e credibilidade perante clientes e stakeholders.”
             </>
           ),
-          name: "— CEO da Port Empresarial Facilities e Terceirização",
+          name: "— CEO da PORT EMPRESARIAL FACILITIES E TERCEIRIZAÇÃO",
         },
-
         {
-          role: "Silvana Crivelari",
-          img: logo5,
-          alt: "Foto do depoente",
+          role: "Aiana Alves",
+          img: "",
+          alt: "Imagem de LogoMarca",
           description: (
             <>
-              “O Dr. Vladimir ministrou uma palestra alertando sobre os golpes
-              cibernéticos com muita propriedade, um tema de relevância na
-              atualidade e que soube tratar o assunto dando exemplos e dicas
-              excelentes.
-              <br />
-              <br />A categoria representada pelo Siemaco ABC e região adorou.
-              Parabéns dr👏🏼👏🏼👏🏼”
+              "Seu trabalho se destaca pelo atendimento personalizado, sempre
+              sensível às particularidades de cada situação. Sua atuação
+              humanizada traz acolhimento e profundidade ao que faz, tornando
+              sua contribuição verdadeiramente diferenciada."
             </>
           ),
-          name: "— Diretora Jurídica do SIEMACO ABC",
+          name: "— Consultora de RH",
+        },
+        {
+          role: "Vivian Teixeira",
+          img: logo4,
+          alt: "Imagem de LogoMarca",
+          description: (
+            <>
+              “Seu trabalho se destaca pelo atendimento personalizado, sempre
+              sensível às particularidades de cada situação.
+              <br />
+              <br />
+              Sua atuação humanizada traz acolhimento e profundidade ao que faz,
+              tornando sua contribuição verdadeiramente diferenciada.”
+            </>
+          ),
+          name: "— Advogada sócia do TEIXEIRA OLIVEIRA ADVOGADOS",
+        },
+        {
+          role: "Francisco Máximo",
+          img: "",
+          alt: "Imagem de LogoMarca",
+          description: (
+            <>
+              "Trabalhar ao lado do Dr. Vladimir Vitti Jr é uma experiência que
+              reforça o quanto compliance e proteção de dados caminham juntos.
+              Sua expertise jurídica, aliada a um olhar estratégico e
+              comprometido com a ética empresarial, faz toda a diferença para as
+              organizações que buscam não apenas evitar riscos, mas construir
+              uma cultura sólida de conformidade. Profissional dedicado,
+              atualizado e sempre disposto a encontrar as melhores soluções para
+              seus clientes — uma referência que recomendo com total confiança."
+              "
+            </>
+          ),
+          name: "— DPO e CEO na MÁXIMO CONSULTORIA ",
         },
       ],
     },
@@ -1185,6 +1212,24 @@ const content = {
         "Agradecemos sua visita! Esperamos que em breve você se torne nosso cliente e desfrute de todos os benefícios que oferecemos.",
       footerSocialText: "Siga a gente nas redes sociais:",
       footerNavegacaoText: "NAVEGAÇÃO",
+      linksExternos: {
+        link1: {
+          label: <>Código de Conduta</>,
+          link: "https://drive.google.com/file/d/1xHmbFNleY0uBwEBI7IjwUyEkEVjdTeAj/view?usp=sharing",
+        },
+        link2: {
+          label: <>Política Anticorrupção</>,
+          link: "https://drive.google.com/file/d/1xHmbFNleY0uBwEBI7IjwUyEkEVjdTeAj/view?usp=sharing",
+        },
+        link3: {
+          label: <>Política de Proteção de Dados</>,
+          link: "https://drive.google.com/file/d/1xHmbFNleY0uBwEBI7IjwUyEkEVjdTeAj/view?usp=sharing",
+        },
+        link4: {
+          label: <>Política de Privacidade</>,
+          link: "https://drive.google.com/file/d/1xHmbFNleY0uBwEBI7IjwUyEkEVjdTeAj/view?usp=sharing",
+        },
+      },
       desenvolvidoPor: "Desenvolvido com excelência por Paper Street",
       privacidade: (
         <div class="phone3:max-w-3xl mx-auto tablet1:px-6 text-gray-900 leading-relaxed font-secondFont">
