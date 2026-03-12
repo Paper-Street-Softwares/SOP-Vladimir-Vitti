@@ -161,8 +161,8 @@ function FeaturesNovaTemplate({ colorMode, accordion }) {
             setSelectedFeature(null);
             setExpanded(false);
           }}
-          style={{ width: "60vw" }}
-          breakpoints={{ "960px": "80vw", "641px": "90vw" }}
+          style={{ width: "500px" }}
+          breakpoints={{ "1280px": "450px", "960px": "80vw", "641px": "90vw" }}
         >
           {/* DESCRIÇÃO DO CARD PRINCIPAL */}
           {/* {selectedFeature?.description && (
@@ -185,7 +185,12 @@ function FeaturesNovaTemplate({ colorMode, accordion }) {
                   expandIcon={<ExpandMoreIcon className={textDestaque} />}
                   sx={{ backgroundColor: bgAccordion }}
                 >
-                  <Typography className={text}>{subCard.title}</Typography>
+                  <Typography className={text}>
+                    {subCard.title} -{" "}
+                    <span className="font-secondFont text-sm text-primaryDark">
+                      Veja +
+                    </span>
+                  </Typography>
                 </AccordionSummary>
 
                 <AccordionDetails sx={{ backgroundColor: bgAccordion }}>

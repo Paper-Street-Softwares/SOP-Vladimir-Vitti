@@ -582,7 +582,7 @@ const content = {
           <br />
           Conto com parceiros estratégicos em diversas áreas do Direito e
           profissionais técnicos como TI/SI, Segurança e Medicina do Trabalho,
-          Auditores,... que complementam meus serviços
+          Auditores, que complementam meus serviços.
         </p>
       ),
       paragraphModalCta: "Entre em contato",
@@ -820,7 +820,7 @@ const content = {
         },
         {
           role: "Mirian Bazote",
-          img: logo3,
+          img: "",
           alt: "Imagem de LogoMarca",
           description: (
             <>
@@ -838,7 +838,7 @@ const content = {
           name: "— CEO da PORT EMPRESARIAL FACILITIES E TERCEIRIZAÇÃO",
         },
         {
-          role: "Aiana Alves",
+          role: "Daiana Alves",
           img: "",
           alt: "Imagem de LogoMarca",
           description: (
@@ -853,7 +853,7 @@ const content = {
         },
         {
           role: "Vivian Teixeira",
-          img: logo4,
+          img: "",
           alt: "Imagem de LogoMarca",
           description: (
             <>
