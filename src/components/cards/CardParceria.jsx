@@ -84,14 +84,14 @@ function ParceriaCard({ img, alt, text, name, role, colorMode }) {
 
       {/* MODAL */}
       <Dialog
-        className="font-secondFont bg-white p-4 rounded-md"
+        className="font-secondFont bg-white p-0 rounded-md"
         closeIcon={<X size={20} />}
-        header={<span className="font-secondFont px-4">{role}</span>}
+        header={<span className="font-secondFont pl-3">{role}</span>}
         visible={visible}
         onHide={() => setVisible(false)}
-        style={{ width: "50vw" }}
+        style={{ width: "409px" }}
         breakpoints={{
-          "1024px": "70vw",
+          "1023px": "70vw",
           "641px": "90vw",
         }}
       >
