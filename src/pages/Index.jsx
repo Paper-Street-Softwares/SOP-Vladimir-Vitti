@@ -42,6 +42,7 @@ import { Diferences } from "../components/sections/Diferences";
 import { AlternatingSection } from "../components/sectionElements/AlternatingSection";
 import Parceria from "../components/sections/Parceria";
 import FormNovoTemplate from "../components/sections/FormNovoTemplate";
+import StrategicSection from "../components/sections/StrategicSection";
 
 export default function Index() {
   const { colorMode, setColorMode } = useColorMode();
@@ -82,29 +83,30 @@ export default function Index() {
                 ButtonModal={true}
                 benefits={false}
               />
+              <StrategicSection colorMode={colorMode} />
               <SocialMediaTemplate colorMode={colorMode} />
             </Suspense>
           </AlternatingSection>
 
-          <AlternatingSection index={3} colorMode={colorMode} forcePrimaryDark>
+          <AlternatingSection index={4} colorMode={colorMode} forcePrimaryDark>
             <Suspense>
               <CtaNovoTemplate colorMode={colorMode} container={false} />
             </Suspense>
           </AlternatingSection>
 
-          <AlternatingSection index={4} colorMode={colorMode}>
+          <AlternatingSection index={5} colorMode={colorMode}>
             <Suspense>
               <StepsNovoTemplate colorMode={colorMode} />
             </Suspense>
           </AlternatingSection>
 
-          <AlternatingSection index={5} colorMode={colorMode}>
+          <AlternatingSection index={6} colorMode={colorMode}>
             <Suspense>
               <Parceria colorMode={colorMode} />
             </Suspense>
           </AlternatingSection>
 
-          <AlternatingSection index={6} colorMode={colorMode}>
+          <AlternatingSection index={7} colorMode={colorMode}>
             <Suspense>
               <FormNovoTemplate colorMode={colorMode} />
             </Suspense>
@@ -116,7 +118,7 @@ export default function Index() {
             </Suspense>
           </AlternatingSection> */}
 
-          <AlternatingSection index={7} colorMode={colorMode} forcePrimaryDark>
+          <AlternatingSection index={8} colorMode={colorMode} forcePrimaryDark>
             <Suspense>
               <FooterNovoTemplate
                 colorMode={colorMode}

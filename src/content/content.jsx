@@ -7,6 +7,7 @@ import bgHero from "../assets/imgs/hero/bgImageHero.png";
 import imgFeatures from "../assets/imgs/features/imgServices.webp";
 
 import aboutImg from "../assets/imgs/about/aboutImg.webp";
+import imgStrategic from "../assets/imgs/about/imgStrategic.webp";
 // import team1 from '../assets/imgs/team/team1.webp'
 // import team2 from '../assets/imgs/team/team2.webp'
 import aboutSocialImg from "../assets/imgs/about/aboutSocial.webp";
@@ -529,6 +530,38 @@ const content = {
       title: <>A_Definir</>,
       subtitle: <>A_Definir</>,
       embedsrc: <>A_Definir</>,
+    },
+    strategicSection: {
+      minitag: <>Rede estratégica de especialistas</>,
+      title: <>Soluções jurídicas completas com apoio multidisciplinar</>,
+      subtitle: (
+        <>
+          Parcerias estratégicas com especialistas em Direito, Tecnologia,
+          Segurança, Auditoria e Medicina do Trabalho para oferecer soluções
+          mais seguras e eficientes.
+        </>
+      ),
+      paragraph: (
+        <>
+          Para entregar soluções realmente eficazes, muitas vezes é preciso ir
+          além do conhecimento jurídico.
+          <br />
+          <br />
+          Por isso, conto com uma rede de parceiros estratégicos em diversas
+          áreas do Direito e com profissionais técnicos especializados em TI/SI,
+          Segurança, Medicina do Trabalho e Auditoria.
+          <br />
+          <br />
+          Essa atuação integrada permite analisar cada situação com uma visão
+          mais ampla, identificar riscos com precisão e construir estratégias
+          mais seguras para cada cliente.
+          <br />
+          <br />O resultado é um serviço jurídico mais completo, técnico e
+          preparado para lidar com desafios complexos.
+        </>
+      ),
+      img: imgStrategic,
+      alt: "imagem ilustrativa",
     },
     about: {
       imagem: {
