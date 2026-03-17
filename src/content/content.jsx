@@ -547,9 +547,8 @@ const content = {
           além do conhecimento jurídico.
           <br />
           <br />
-          Por isso, conto com uma rede de parceiros estratégicos em diversas
-          áreas do Direito e com profissionais técnicos especializados em TI/SI,
-          Segurança, Medicina do Trabalho e Auditoria.
+         Por isso, contamos com uma rede de parceiros estratégicos em diversas áreas do Direito e com profissionais técnicos especializados em TI/SI, Segurança, Medicina do Trabalho e Auditoria.
+
           <br />
           <br />
           Essa atuação integrada permite analisar cada situação com uma visão
