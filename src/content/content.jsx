@@ -47,7 +47,7 @@ export const infos = {
   name: "Vladimir Vitti JR.",
   email: "contato", // Email desejado pelo cliente
   emailSecundario: "A_Definir", // Email desejado pelo cliente
-  domain: "vvjrconsultoria.com", // Sem "www"
+  domain: "vvjrcompliance.com", // Sem "www"
   phone: {
     ddd: "11",
     firstPart: "99681", // Apenas os 5 primeiros números (incluindo o 9)
@@ -547,8 +547,9 @@ const content = {
           além do conhecimento jurídico.
           <br />
           <br />
-         Por isso, contamos com uma rede de parceiros estratégicos em diversas áreas do Direito e com profissionais técnicos especializados em TI/SI, Segurança, Medicina do Trabalho e Auditoria.
-
+          Por isso, contamos com uma rede de parceiros estratégicos em diversas
+          áreas do Direito e com profissionais técnicos especializados em TI/SI,
+          Segurança, Medicina do Trabalho e Auditoria.
           <br />
           <br />
           Essa atuação integrada permite analisar cada situação com uma visão
